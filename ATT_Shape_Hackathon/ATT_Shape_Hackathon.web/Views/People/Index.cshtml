@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    <style type="text/css">
+        .ng-hide {
+            transition: 0.5s linear all;
+            opacity: 0;
+        }
+
+        .container.ng-hide {
+            transition: 0.5s linear all;
+            opacity: 0;
+        }
+
+        .col-md-8.ng-hide {
+            transition: 0.5s linear all;
+            opacity: 0;
+        }
+    </style>
+}
+
+<div ng-controller="peopleController as peopleCtrl">
+
+    <div class="body-content">
+        <div class="row">
+            <h2>People</h2>
+        </div>
+        <div class="row">
+            {{peopleCtrl.message}}
+            {{1+2}}
+            <div ng-show="peopleCtrl.displayBodyContent" class="container ng-hide">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>{{peopleCtrl.heading}}</strong>
+                            </div>
+                            <div class="panel-body">
+                                <button type="button"
+                                        class="btn btn-default"
+                                        ng-hide="peopleCtrl.selectedItem"
+                                        ng-click="peopleCtrl.createPerson()">
+                                    Add Person
+                                </button>
+                                <form id="createPersonForm" name="createPersonForm" ng-show="peopleCtrl.selectedItem" class="ng-hide" novalidate>
+                                    <fieldset>
+                                        <div class="row">
+                                            <div class="form-group"
+                                                 ng-class="{'has-error': createPersonForm.firstName.$invalid && createPersonForm.firstName.$pristine}">
+                                                <div class="col-md-6 col-sm-6">
+                                                    <label>First Name</label>
+                                                    <input type="text"
+                                                           ng-model="peopleCtrl.selectedItem.firstName"
+                                                           id="firstName"
+                                                           name="firstName"
+                                                           value=""
+                                                           class="form-control" />
+                                                    <p ng-show="createPersonForm.firstName.$invalid && createPersonForm.firstName.$pristine"
+                                                       class="help-block">
+                                                        First Name is required
+                                                    </p>
+
+                                                    <label>Last Name</label>
+                                                    <input type="text"
+                                                           ng-model="peopleCtrl.selectedItem.lastName"
+                                                           id="lastName"
+                                                           name="lastName"
+                                                           value=""
+                                                           class="form-control" />
+                                                    <p ng-show="createPersonForm.lastName.$invalid && createPersonForm.lastName.$pristine"
+                                                       class="help-block">
+                                                        Last Name is required
+                                                    </p>
+
+                                                    <label>Middle Initital</label>
+                                                    <input type="text"
+                                                           ng-model="peopleCtrl.selectedItem.middleInitial"
+                                                           id="middleInitial"
+                                                           name="middleInitial"
+                                                           value=""
+                                                           class="form-control" />
+                                                </div>
+                                            </div>
+                                            <span class="col-md-6">
+                                                <button id="cmdCreatePerson" ng-click="peopleCtrl.save()" class="btn btn-default pull-right">
+                                                    Submit
+                                                </button>
+                                            </span>
+                                            <span class="col-md-6">
+                                                <button id="cmdCancelPerson" ng-click="peopleCtrl.cancel()" class="btn btn-default pull-right">
+                                                    Cancel
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="peopleCtrl.displayBodyContent" class="col-md-8 ng-hide">
+                        <div id="panel-1" class="panel panel-default">
+                            <div class="panel-heading">
+                                <span class="panel-title">
+                                    <strong>People</strong>
+                                </span>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <td>ID</td>
+                                                <td>First Name</td>
+                                                <td>Last Name</td>
+                                                <td>MI</td>
+                                                <td>Actions</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="peopleList">
+                                            <!--Person template pasted here-->
+                                            @*<tr ng-repeat="(id, item) in peopleCtrl.items track by id">
+                                                    <td>{{item.id}}</td>
+                                                    <td>{{item.firstName}}</td>
+                                                    <td>{{item.lastName}}</td>
+                                                    <td>{{item.middleInitial}}</td>
+                                                    <td>
+                                                        <button ng-click="peopleCtrl.edit(item)" class="btn btn-default btn-xs">Edit</button>
+                                                        <button ng-click="peopleCtrl.delete(item)" class="btn btn-default btn-xs">Delete</button>
+                                                    </td>
+                                                </tr>*@
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+    <script type="text/html" id="template">
+        <tr>
+            <td class="id"><!--Id--></td>
+            <td class="firstName"><!--FirstName--></td>
+            <td class="lastName"><!--FirstName--></td>
+            <td class="middleInitial"><!--MiddleInitial--></td>
+            <td class="actions">
+                <button class="edit btn btn-default btn-xs">Edit</button>
+                <button class="delete btn btn-default btn-xs">Delete</button>
+            </td>
+        </tr>
+    </script>
+    <script src="~/Scripts/App/attApp.js"></script>
+    <script src="~/Scripts/App/Services/people.js"></script>
+    <script src="~/Scripts/App/Controllers/PeopleController.js"></script>
+    <script src="~/Scripts/App/app.Services.People.js"></script>
+
+}
