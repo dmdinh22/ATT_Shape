@@ -1,6 +1,6 @@
-﻿attApp.services.people = attApp.services.people || {};
+﻿att.services.people = att.services.people || {};
 
-attApp.services.people.selectAll = function(onSuccess, onError){
+att.services.people.selectAll = function(onSuccess, onError){
 	var url = '/api/people';
 	var settings = {
 		cache: false,
@@ -12,7 +12,7 @@ attApp.services.people.selectAll = function(onSuccess, onError){
 	$.ajax(url, settings);
 };
 
-attApp.services.people.save = function (data, onSuccess, onError) {
+att.services.people.save = function (data, onSuccess, onError) {
 	var url = '/api/people';
 	var settings = {
 		cache: false,
@@ -26,7 +26,7 @@ attApp.services.people.save = function (data, onSuccess, onError) {
 	$.ajax(url, settings);
 };
 
-attApp.services.people.update = function (data, onSuccess, onError) {
+att.services.people.update = function (data, onSuccess, onError) {
 	var url = '/api/people';
 	var settings = {
 		cache: false,
@@ -40,7 +40,7 @@ attApp.services.people.update = function (data, onSuccess, onError) {
 	$.ajax(url, settings);
 };
 
-attApp.services.people.delete = function (data, onSuccess, onError) {
+att.services.people.delete = function (data, onSuccess, onError) {
 	var url = '/api/people?id=' + data;
 	var settings = {
 		cache: false,

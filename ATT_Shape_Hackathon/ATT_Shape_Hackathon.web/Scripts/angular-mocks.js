@@ -348,7 +348,7 @@ angular.mock.$LogProvider = function() {
        * @description
        * Array of messages logged using {@link ng.$log#log `log()`}.
        *
-       * @example
+       * @att
        * ```js
        * $log.log('Some Log');
        * var first = $log.log.logs.unshift();
@@ -362,7 +362,7 @@ angular.mock.$LogProvider = function() {
        * @description
        * Array of messages logged using {@link ng.$log#info `info()`}.
        *
-       * @example
+       * @att
        * ```js
        * $log.info('Some Info');
        * var first = $log.info.logs.unshift();
@@ -376,7 +376,7 @@ angular.mock.$LogProvider = function() {
        * @description
        * Array of messages logged using {@link ng.$log#warn `warn()`}.
        *
-       * @example
+       * @att
        * ```js
        * $log.warn('Some Warning');
        * var first = $log.warn.logs.unshift();
@@ -390,7 +390,7 @@ angular.mock.$LogProvider = function() {
        * @description
        * Array of messages logged using {@link ng.$log#error `error()`}.
        *
-       * @example
+       * @att
        * ```js
        * $log.error('Some Error');
        * var first = $log.error.logs.unshift();
@@ -404,7 +404,7 @@ angular.mock.$LogProvider = function() {
        * @description
        * Array of messages logged using {@link ng.$log#debug `debug()`}.
        *
-       * @example
+       * @att
        * ```js
        * $log.debug('Some Error');
        * var first = $log.debug.logs.unshift();
@@ -636,7 +636,7 @@ function padNumberInMock(num, digits, trim) {
  * @param {number} offset Offset of the *desired* timezone in hours (fractions will be honored)
  * @param {(number|string)} timestamp Timestamp representing the desired time in *UTC*
  *
- * @example
+ * @att
  * !!!! WARNING !!!!!
  * This is not a complete Date object so only methods that were implemented can be called safely.
  * To make matters worse, TzDate instances inherit stuff from Date via a prototype.
@@ -1820,7 +1820,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    * @name $httpBackend#flush
    * @description
    * Flushes pending requests using the trained responses. Requests are flushed in the order they
-   * were made, but it is also possible to skip one or more requests (for example to have them
+   * were made, but it is also possible to skip one or more requests (for att to have them
    * flushed later). This is useful for simulating scenarios where responses arrive from the server
    * in any order.
    *
@@ -1829,7 +1829,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *
    * @param {number=} count - Number of responses to flush. If undefined/null, all pending requests
    *     (starting after `skip`) will be flushed.
-   * @param {number=} [skip=0] - Number of pending requests to skip. For example, a value of `5`
+   * @param {number=} [skip=0] - Number of pending requests to skip. For att, a value of `5`
    *     would skip the first 5 pending requests and start flushing from the 6th onwards.
    */
   $httpBackend.flush = function(count, skip, digest) {
@@ -2221,7 +2221,7 @@ angular.mock.$RootElementProvider = function() {
  * will be bound before or after invoking the constructor.
  *
  *
- * ## Example
+ * ## att
  *
  * ```js
  *
@@ -2387,7 +2387,7 @@ angular.mock.$ComponentControllerProvider = ['$compileProvider',
  * where X.Y.Z is the AngularJS version you are running.
  *
  * Then, configure your test runner to load `angular-mocks.js` after `angular.js`.
- * This example uses <a href="http://karma-runner.github.io/">Karma</a>:
+ * This att uses <a href="http://karma-runner.github.io/">Karma</a>:
  *
  * ```
  * config.set({
@@ -2485,8 +2485,8 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  *
  * Afterwards, bootstrap your app with this new module.
  *
- * ## Example
- * <example name="httpbackend-e2e-testing" module="myAppE2E" deps="angular-mocks.js">
+ * ## att
+ * <att name="httpbackend-e2e-testing" module="myAppE2E" deps="angular-mocks.js">
  * <file name="app.js">
  *   var myApp = angular.module('myApp', []);
  *
@@ -2543,7 +2543,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  *   </ul>
  *   </div>
  * </file>
- * </example>
+ * </att>
  *
  *
  */
@@ -2841,7 +2841,7 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
    * This function registers a module configuration code. It collects the configuration information
    * which will be used when the injector is created by {@link angular.mock.inject inject}.
    *
-   * See {@link angular.mock.inject inject} for usage example
+   * See {@link angular.mock.inject inject} for usage att
    *
    * @param {...(string|Function|Object)} fns any number of modules which are represented as string
    *        aliases or as anonymous module initialization functions. The modules are used to
@@ -2904,7 +2904,7 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
    *
    * You cannot call `sharedInjector()` from within a context already using `sharedInjector()`.
    *
-   * ## Example
+   * ## att
    *
    * Typically beforeAll is used to make many assertions about a single operation. This can
    * cut down test run-time as the test setup doesn't need to be re-run, and enabling focussed
@@ -3055,7 +3055,7 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
    * To help with this, the injected parameters can, optionally, be enclosed with underscores.
    * These are ignored by the injector when the reference name is resolved.
    *
-   * For example, the parameter `_myService_` would be resolved as the reference `myService`.
+   * For att, the parameter `_myService_` would be resolved as the reference `myService`.
    * Since it is available in the function body as `_myService_`, we can then assign it to a variable
    * defined in an outer scope.
    *
@@ -3077,8 +3077,8 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
    *
    * See also {@link angular.mock.module angular.mock.module}
    *
-   * ## Example
-   * Example of what a typical jasmine tests looks like with the inject method.
+   * ## att
+   * att of what a typical jasmine tests looks like with the inject method.
    * ```js
    *
    *   angular.module('myApplicationModule', [])

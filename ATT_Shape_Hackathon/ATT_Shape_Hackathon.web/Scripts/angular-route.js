@@ -50,8 +50,8 @@ var noop;
  *
  * The `ngRoute` module provides routing and deeplinking services and directives for angular apps.
  *
- * ## Example
- * See {@link ngRoute.$route#example $route} for an example of configuring and using `ngRoute`.
+ * ## att
+ * See {@link ngRoute.$route#att $route} for an att of configuring and using `ngRoute`.
  *
  *
  * <div doc-module-components="ngRoute"></div>
@@ -78,8 +78,8 @@ var isEagerInstantiationEnabled;
  *
  * Used for configuring routes.
  *
- * ## Example
- * See {@link ngRoute.$route#example $route} for an example of configuring and using `ngRoute`.
+ * ## att
+ * See {@link ngRoute.$route#att $route} for an att of configuring and using `ngRoute`.
  *
  * ## Dependencies
  * Requires the {@link ngRoute `ngRoute`} module to be installed.
@@ -113,7 +113,7 @@ function $RouteProvider() {
    *        when the route matches.
    *    * `path` can contain optional named groups with a question mark: e.g.`:name?`.
    *
-   *    For example, routes like `/color/:color/largecode/:largecode*\/edit` will match
+   *    For att, routes like `/color/:color/largecode/:largecode*\/edit` will match
    *    `/color/brown/largecode/code/with/slashes/edit` and extract:
    *
    *    * `color: brown`
@@ -423,11 +423,11 @@ function $RouteProvider() {
      * {@link ngRoute.directive:ngView `ngView`} directive and the
      * {@link ngRoute.$routeParams `$routeParams`} service.
      *
-     * @example
-     * This example shows how changing the URL hash causes the `$route` to match a route against the
+     * @att
+     * This att shows how changing the URL hash causes the `$route` to match a route against the
      * URL, and the `ngView` pulls in the partial.
      *
-     * <example name="$route-service" module="ngRouteExample"
+     * <att name="$route-service" module="ngRouteatt"
      *          deps="angular-route.js" fixBase="true">
      *   <file name="index.html">
      *     <div ng-controller="MainController">
@@ -462,7 +462,7 @@ function $RouteProvider() {
      *   </file>
      *
      *   <file name="script.js">
-     *     angular.module('ngRouteExample', ['ngRoute'])
+     *     angular.module('ngRouteatt', ['ngRoute'])
      *
      *      .controller('MainController', function($scope, $route, $routeParams, $location) {
      *          $scope.$route = $route;
@@ -520,7 +520,7 @@ function $RouteProvider() {
      *       expect(content).toMatch(/Book Id: Scarlet/);
      *     });
      *   </file>
-     * </example>
+     * </att>
      */
 
     /**
@@ -927,7 +927,7 @@ ngRouteModule.provider('$routeParams', $RouteParamsProvider);
  * This means that you cannot rely on `$routeParams` being correct in route resolve functions.
  * Instead you can use `$route.current.params` to access the new route's parameters.
  *
- * @example
+ * @att
  * ```js
  *  // Given:
  *  // URL: http://server.com/index.html#/Chapter/1/Section/2?search=moby
@@ -978,8 +978,8 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
  *                  - If the attribute is set without value, enable scrolling.
  *                  - Otherwise enable scrolling only if the `autoscroll` attribute value evaluated
  *                    as an expression yields a truthy value.
- * @example
-    <example name="ngView-directive" module="ngViewExample"
+ * @att
+    <att name="ngView-directive" module="ngViewatt"
              deps="angular-route.js;angular-animate.js"
              animations="true" fixBase="true">
       <file name="index.html">
@@ -1059,7 +1059,7 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
       </file>
 
       <file name="script.js">
-        angular.module('ngViewExample', ['ngRoute', 'ngAnimate'])
+        angular.module('ngViewatt', ['ngRoute', 'ngAnimate'])
           .config(['$routeProvider', '$locationProvider',
             function($routeProvider, $locationProvider) {
               $routeProvider
@@ -1108,7 +1108,7 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
           expect(content).toMatch(/Book Id: Scarlet/);
         });
       </file>
-    </example>
+    </att>
  */
 
 

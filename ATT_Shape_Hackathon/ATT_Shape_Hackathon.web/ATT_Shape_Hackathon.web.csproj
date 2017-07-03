@@ -213,10 +213,11 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\App\app.Services.People.js" />
+    <Content Include="Scripts\App\att.Services.People.js" />
     <Content Include="Scripts\App\attApp.js" />
     <Content Include="Scripts\App\Controllers\PeopleController.js" />
     <Content Include="Scripts\App\Services\people.js" />
+    <Content Include="Scripts\App\att.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

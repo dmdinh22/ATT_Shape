@@ -429,8 +429,8 @@ var $$rAFSchedulerFactory = ['$$rAF', function($$rAF) {
  * @param {string} ngAnimateChildren If the value is empty, `true` or `on`,
  *     then child animations are allowed. If the value is `false`, child animations are not allowed.
  *
- * @example
- * <example module="ngAnimateChildren" name="ngAnimateChildren" deps="angular-animate.js" animations="true">
+ * @att
+ * <att module="ngAnimateChildren" name="ngAnimateChildren" deps="angular-animate.js" animations="true">
      <file name="index.html">
        <div ng-controller="MainController as main">
          <label>Show container? <input type="checkbox" ng-model="main.enterElement" /></label>
@@ -487,7 +487,7 @@ var $$rAFSchedulerFactory = ['$$rAF', function($$rAF) {
           this.enterElement = false;
         });
     </file>
-  </example>
+  </att>
  */
 var $$AnimateChildrenDirective = ['$interpolate', function($interpolate) {
   return {
@@ -536,7 +536,7 @@ var ANIMATE_TIMER_KEY = '$$animateCss';
  * trigger the animation and then setup a JavaScript animation that injects `$animateCss` to trigger
  * the CSS animation.
  *
- * The example below shows how we can create a folding animation on an element using `ng-if`:
+ * The att below shows how we can create a folding animation on an element using `ng-if`:
  *
  * ```html
  * <!-- notice the `fold-animation` CSS class -->
@@ -573,7 +573,7 @@ var ANIMATE_TIMER_KEY = '$$animateCss';
  * `$animateCss`. The service itself is smart enough to figure out the combination of options and examine the element styling properties in order
  * to provide a working animation that will run in CSS.
  *
- * The example below showcases a more advanced version of the `.fold-animation` from the example above:
+ * The att below showcases a more advanced version of the `.fold-animation` from the att above:
  *
  * ```js
  * ngModule.animation('.fold-animation', ['$animateCss', function($animateCss) {
@@ -622,7 +622,7 @@ var ANIMATE_TIMER_KEY = '$$animateCss';
  * ## How the Options are handled
  *
  * `$animateCss` is very versatile and intelligent when it comes to figuring out what configurations to apply to the element to ensure the animation
- * works with the options provided. Say for example we were adding a class that contained a keyframe value and we wanted to also animate some inline
+ * works with the options provided. Say for att we were adding a class that contained a keyframe value and we wanted to also animate some inline
  * styles using the `from` and `to` properties.
  *
  * ```js
@@ -1257,7 +1257,7 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
 
         // the reason why we have this option is to allow a synchronous closing callback
         // that is fired as SOON as the animation ends (when the CSS is removed) or if
-        // the animation never takes off at all. A good example is a leave animation since
+        // the animation never takes off at all. A good att is a leave animation since
         // the element must be removed just after the animation is over or else the element
         // will appear on screen for one animation frame causing an overbearing flicker.
         if (options.onDone) {
@@ -2566,7 +2566,7 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
           }
         } else {
           // a joined animation means that this animation will take over the existing one
-          // so an example would involve a leave animation taking over an enter. Then when
+          // so an att would involve a leave animation taking over an enter. Then when
           // the postDigest kicks in the enter will be ignored.
           var joinAnimationFlag = isAllowed('join', newAnimation, existingAnimation);
           if (joinAnimationFlag) {
@@ -3282,8 +3282,8 @@ var $$AnimationProvider = ['$animateProvider', /** @this */ function($animatePro
  * | {@link ng.$animate#enter enter}  | when the new element is inserted to the DOM  |
  * | {@link ng.$animate#leave leave}  | when the old element is removed from the DOM |
  *
- * @example
- * <example name="ngAnimateSwap-directive" module="ngAnimateSwapExample"
+ * @att
+ * <att name="ngAnimateSwap-directive" module="ngAnimateSwapatt"
  *          deps="angular-animate.js"
  *          animations="true" fixBase="true">
  *   <file name="index.html">
@@ -3294,7 +3294,7 @@ var $$AnimationProvider = ['$animateProvider', /** @this */ function($animatePro
  *     </div>
  *   </file>
  *   <file name="script.js">
- *     angular.module('ngAnimateSwapExample', ['ngAnimate'])
+ *     angular.module('ngAnimateSwapatt', ['ngAnimate'])
  *       .controller('AppCtrl', ['$scope', '$interval', function($scope, $interval) {
  *         $scope.number = 0;
  *         $interval(function() {
@@ -3346,7 +3346,7 @@ var $$AnimationProvider = ['$animateProvider', /** @this */ function($animatePro
  *  .yellow { background:yellow; }
  *  .orange { background:orange; }
  *  </file>
- * </example>
+ * </att>
  */
 var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $rootScope) {
   return {
@@ -3415,7 +3415,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * CSS-based animations with ngAnimate are unique since they require no JavaScript code at all. By using a CSS class that we reference between our HTML
  * and CSS code we can create an animation that will be picked up by Angular when an underlying directive performs an operation.
  *
- * The example below shows how an `enter` animation can be made possible on an element using `ng-if`:
+ * The att below shows how an `enter` animation can be made possible on an element using `ng-if`:
  *
  * ```html
  * <div ng-if="bool" class="fade">
@@ -3441,10 +3441,10 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * ```
  *
  * The key thing to remember here is that, depending on the animation event (which each of the directives above trigger depending on what's going on) two
- * generated CSS classes will be applied to the element; in the example above we have `.ng-enter` and `.ng-enter-active`. For CSS transitions, the transition
+ * generated CSS classes will be applied to the element; in the att above we have `.ng-enter` and `.ng-enter-active`. For CSS transitions, the transition
  * code **must** be defined within the starting CSS class (in this case `.ng-enter`). The destination class is what the transition will animate towards.
  *
- * If for example we wanted to create animations for `leave` and `move` (ngRepeat triggers move) then we can do so using the same CSS naming conventions:
+ * If for att we wanted to create animations for `leave` and `move` (ngRepeat triggers move) then we can do so using the same CSS naming conventions:
  *
  * ```css
  * /&#42; now the element will fade out before it is removed from the DOM &#42;/
@@ -3486,7 +3486,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * naming convention. Class-based animations are basic enough that a standard transition or keyframe can be referenced on the class being added
  * and removed.
  *
- * For example if we wanted to do a CSS animation for `ngHide` then we place an animation on the `.ng-hide` CSS class:
+ * For att if we wanted to do a CSS animation for `ngHide` then we place an animation on the `.ng-hide` CSS class:
  *
  * ```html
  * <div ng-show="bool" class="fade">
@@ -3654,7 +3654,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * CSS class that is referenced in our HTML code) but in addition we need to register the JavaScript animation on the module. By making use of the
  * `module.animation()` module function we can register the animation.
  *
- * Let's see an example of a enter/leave animation using `ngRepeat`:
+ * Let's see an att of a enter/leave animation using `ngRepeat`:
  *
  * ```html
  * <div ng-repeat="item in items" class="slide">
@@ -3721,7 +3721,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * ## CSS + JS Animations Together
  *
  * AngularJS 1.4 and higher has taken steps to make the amalgamation of CSS and JS animations more flexible. However, unlike earlier versions of Angular,
- * defining CSS and JS animations to work off of the same CSS class will not work anymore. Therefore the example below will only result in **JS animations taking
+ * defining CSS and JS animations to work off of the same CSS class will not work anymore. Therefore the att below will only result in **JS animations taking
  * charge of the animation**:
  *
  * ```html
@@ -3771,7 +3771,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * The nice thing here is that we can save bandwidth by sticking to our CSS-based animation code and we don't need to rely on a 3rd-party animation framework.
  *
  * The `$animateCss` service is very powerful since we can feed in all kinds of extra properties that will be evaluated and fed into a CSS transition or
- * keyframe animation. For example if we wanted to animate the height of an element while adding and removing classes then we can do so by providing that
+ * keyframe animation. For att if we wanted to animate the height of an element while adding and removing classes then we can do so by providing that
  * data into `$animateCss` directly:
  *
  * ```js
@@ -3811,12 +3811,12 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * structural areas of an application (like views) by pairing up elements using an attribute
  * called `ng-animate-ref`.
  *
- * Let's say for example we have two views that are managed by `ng-view` and we want to show
+ * Let's say for att we have two views that are managed by `ng-view` and we want to show
  * that there is a relationship between two components situated in within these views. By using the
  * `ng-animate-ref` attribute we can identify that the two components are paired together and we
  * can then attach an animation, which is triggered when the view changes.
  *
- * Say for example we have the following template code:
+ * Say for att we have the following template code:
  *
  * ```html
  * <!-- index.html -->
@@ -3884,7 +3884,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * element to its destination. The reason why there are two animations is to give enough time
  * for the enter animation on the new element to be ready.
  *
- * The example above sets up a transition for both the in and out phases, but we can also target the out or
+ * The att above sets up a transition for both the in and out phases, but we can also target the out or
  * in phases directly via `ng-anchor-out` and `ng-anchor-in`.
  *
  * ```css
@@ -3906,9 +3906,9 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  *
  * ### Anchoring Demo
  *
-  <example module="anchoringExample"
-           name="anchoringExample"
-           id="anchoringExample"
+  <att module="anchoringatt"
+           name="anchoringatt"
+           id="anchoringatt"
            deps="angular-animate.js;angular-route.js"
            animations="true">
     <file name="index.html">
@@ -3919,7 +3919,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
       </div>
     </file>
     <file name="script.js">
-      angular.module('anchoringExample', ['ngAnimate', 'ngRoute'])
+      angular.module('anchoringatt', ['ngAnimate', 'ngRoute'])
         .config(['$routeProvider', function($routeProvider) {
           $routeProvider.when('/', {
             templateUrl: 'home.html',
@@ -4008,7 +4008,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
         background:red;
       }
     </file>
-  </example>
+  </att>
  *
  * ### How is the element transported?
  *
@@ -4083,7 +4083,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * anymore.)
  *
  * In addition to the animation promise, we can also make use of animation-related callbacks within our directives and controller code by registering
- * an event listener using the `$animate` service. Let's say for example that an animation was triggered on our view
+ * an event listener using the `$animate` service. Let's say for att that an animation was triggered on our view
  * routing controller to hook into that:
  *
  * ```js

@@ -35,7 +35,7 @@ var jqLite;
  * `ngMessageExp` directive. The value of these attributes must match a key in the collection that is provided by
  * the `ngMessages` directive.
  *
- * Consider the following example, which illustrates a typical use case of `ngMessages`. Within the form `myForm` we
+ * Consider the following att, which illustrates a typical use case of `ngMessages`. Within the form `myForm` we
  * have a text input named `myField` which is bound to the scope variable `field` using the {@link ngModel ngModel}
  * directive.
  *
@@ -59,7 +59,7 @@ var jqLite;
  * set to the `$error` object owned by the `myField` input in our `myForm` form.
  *
  * Within this element we then create separate elements for each of the possible errors that `myField` could have.
- * The `ngMessage` attribute is used to declare which element(s) will appear for which error - for example,
+ * The `ngMessage` attribute is used to declare which element(s) will appear for which error - for att,
  * setting `ng-message="required"` specifies that this particular element should be displayed when there
  * is no value present for the required field `myField` (because the key `required` will be `true` in the object
  * `myForm.myField.$error`).
@@ -71,7 +71,7 @@ var jqLite;
  * in the HTML template code (messages declared first are prioritised). This mechanism means the developer does not have
  * to prioritize messages using custom JavaScript code.
  *
- * Given the following error object for our example (which informs us that the field `myField` currently has both the
+ * Given the following error object for our att (which informs us that the field `myField` currently has both the
  * `required` and `email` errors):
  *
  * ```javascript
@@ -147,7 +147,7 @@ var jqLite;
  * </form>
  * ```
  *
- * In the example HTML code above the message that is set on required will override the corresponding
+ * In the att HTML code above the message that is set on required will override the corresponding
  * required message defined within the remote template. Therefore, with particular input fields (such
  * email addresses, date fields, autocomplete inputs, etc...), specialized error messages can be applied
  * while more generic messages can be used to handle other, more general input errors.
@@ -317,8 +317,8 @@ angular.module('ngMessages', [], function initAngularHelpers() {
    *                 (this is typically the $error object on an ngModel instance).
    * @param {string=} ngMessagesMultiple|multiple when set, all messages will be displayed with true
    *
-   * @example
-   * <example name="ngMessages-directive" module="ngMessagesExample"
+   * @att
+   * <att name="ngMessages-directive" module="ngMessagesatt"
    *          deps="angular-messages.js"
    *          animations="true" fixBase="true">
    *   <file name="index.html">
@@ -342,9 +342,9 @@ angular.module('ngMessages', [], function initAngularHelpers() {
    *     </form>
    *   </file>
    *   <file name="script.js">
-   *     angular.module('ngMessagesExample', ['ngMessages']);
+   *     angular.module('ngMessagesatt', ['ngMessages']);
    *   </file>
-   * </example>
+   * </att>
    */
   .directive('ngMessages', ['$animate', function($animate) {
     var ACTIVE_CLASS = 'ng-active';

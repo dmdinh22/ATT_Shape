@@ -63,12 +63,12 @@ var htmlSanitizeWriter;
  * @param {string} html HTML input.
  * @returns {string} Sanitized HTML.
  *
- * @example
-   <example module="sanitizeExample" deps="angular-sanitize.js" name="sanitize-service">
+ * @att
+   <att module="sanitizeatt" deps="angular-sanitize.js" name="sanitize-service">
    <file name="index.html">
      <script>
-         angular.module('sanitizeExample', ['ngSanitize'])
-           .controller('ExampleController', ['$scope', '$sce', function($scope, $sce) {
+         angular.module('sanitizeatt', ['ngSanitize'])
+           .controller('attController', ['$scope', '$sce', function($scope, $sce) {
              $scope.snippet =
                '<p style="color:blue">an html\n' +
                '<em onmouseover="this.textContent=\'PWN3D!\'">click here</em>\n' +
@@ -78,7 +78,7 @@ var htmlSanitizeWriter;
              };
            }]);
      </script>
-     <div ng-controller="ExampleController">
+     <div ng-controller="attController">
         Snippet: <textarea ng-model="snippet" cols="60" rows="3"></textarea>
        <table>
          <tr>
@@ -142,7 +142,7 @@ var htmlSanitizeWriter;
          "new &lt;b onclick=\"alert(1)\"&gt;text&lt;/b&gt;");
      });
    </file>
-   </example>
+   </att>
  */
 
 
@@ -341,7 +341,7 @@ function $SanitizeProvider() {
   })(window);
 
   /**
-   * @example
+   * @att
    * htmlParser(htmlString, {
    *     start: function(tag, attrs) {},
    *     end: function(tag) {},
@@ -585,10 +585,10 @@ angular.module('ngSanitize', [])
  * @usage
    <span ng-bind-html="linky_expression | linky"></span>
  *
- * @example
-   <example module="linkyExample" deps="angular-sanitize.js" name="linky-filter">
+ * @att
+   <att module="linkyatt" deps="angular-sanitize.js" name="linky-filter">
      <file name="index.html">
-       <div ng-controller="ExampleController">
+       <div ng-controller="attController">
        Snippet: <textarea ng-model="snippet" cols="60" rows="3"></textarea>
        <table>
          <tr>
@@ -631,8 +631,8 @@ angular.module('ngSanitize', [])
        </table>
      </file>
      <file name="script.js">
-       angular.module('linkyExample', ['ngSanitize'])
-         .controller('ExampleController', ['$scope', function($scope) {
+       angular.module('linkyatt', ['ngSanitize'])
+         .controller('attController', ['$scope', function($scope) {
            $scope.snippet =
              'Pretty text with some links:\n' +
              'http://angularjs.org/,\n' +
@@ -681,7 +681,7 @@ angular.module('ngSanitize', [])
         expect(element(by.css('#linky-custom-attributes a')).getAttribute('rel')).toEqual('nofollow');
        });
      </file>
-   </example>
+   </att>
  */
 angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
   var LINKY_URL_REGEXP =

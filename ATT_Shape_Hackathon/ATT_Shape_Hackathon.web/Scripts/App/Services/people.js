@@ -7,7 +7,7 @@
 
     function peopleServiceFactory() {
 
-        var aPeopleServiceObject = app.services.people;
+        var aPeopleServiceObject = att.services.people;
         console.log('People Service created successfully');
         return aPeopleServiceObject;
 

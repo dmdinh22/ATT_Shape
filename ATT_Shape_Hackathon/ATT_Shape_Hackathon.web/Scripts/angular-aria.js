@@ -43,7 +43,7 @@
  * Find out more information about each directive by reading the
  * {@link guide/accessibility ngAria Developer Guide}.
  *
- * ## Example
+ * ## att
  * Using ngDisabled with ngAria:
  * ```html
  * <md-checkbox ng-disabled="disabled">

@@ -52,10 +52,10 @@ angular.module('ngCookies', ['ng']).
      * Note: By default, the address that appears in your `<base>` tag will be used as the path.
      * This is important so that cookies will be visible for all routes when html5mode is enabled.
      *
-     * @example
+     * @att
      *
      * ```js
-     * angular.module('cookiesProviderExample', ['ngCookies'])
+     * angular.module('cookiesProvideratt', ['ngCookies'])
      *   .config(['$cookiesProvider', function($cookiesProvider) {
      *     // Setting default options
      *     $cookiesProvider.defaults.domain = 'foo.com';
@@ -84,11 +84,11 @@ angular.module('ngCookies', ['ng']).
      *
      * Requires the {@link ngCookies `ngCookies`} module to be installed.
      *
-     * @example
+     * @att
      *
      * ```js
-     * angular.module('cookiesExample', ['ngCookies'])
-     *   .controller('ExampleController', ['$cookies', function($cookies) {
+     * angular.module('cookiesatt', ['ngCookies'])
+     *   .controller('attController', ['$cookies', function($cookies) {
      *     // Retrieving a cookie
      *     var favoriteCookie = $cookies.get('myFavorite');
      *     // Setting a cookie
@@ -207,11 +207,11 @@ angular.module('ngCookies').
  *
  * Requires the {@link ngCookies `ngCookies`} module to be installed.
  *
- * @example
+ * @att
  *
  * ```js
- * angular.module('cookieStoreExample', ['ngCookies'])
- *   .controller('ExampleController', ['$cookieStore', function($cookieStore) {
+ * angular.module('cookieStoreatt', ['ngCookies'])
+ *   .controller('attController', ['$cookieStore', function($cookieStore) {
  *     // Put cookie
  *     $cookieStore.put('myFavorite','oatmeal');
  *     // Get cookie

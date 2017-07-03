@@ -109,11 +109,11 @@ function shallowClearAndCopy(src, dst) {
  *
  * @param {string} url A parameterized URL template with parameters prefixed by `:` as in
  *   `/user/:username`. If you are using a URL with a port number (e.g.
- *   `http://example.com:8080/api`), it will be respected.
+ *   `http://att.com:8080/api`), it will be respected.
  *
  *   If you are using a url with a suffix, just add the suffix, like this:
- *   `$resource('http://example.com/resource.json')` or `$resource('http://example.com/:id.json')`
- *   or even `$resource('http://example.com/resource/:resource_id.:format')`
+ *   `$resource('http://att.com/resource.json')` or `$resource('http://att.com/:id.json')`
+ *   or even `$resource('http://att.com/resource/:resource_id.:format')`
  *   If the parameter before the suffix is empty, :resource_id in this case, then the `/.` will be
  *   collapsed down to a single `.`.  If you need this sequence to appear and not collapse then you
  *   can escape it with `/\.`.
@@ -132,7 +132,7 @@ function shallowClearAndCopy(src, dst) {
  *   If the parameter value is prefixed with `@`, then the value for that parameter will be
  *   extracted from the corresponding property on the `data` object (provided when calling actions
  *   with a request body).
- *   For example, if the `defaultParam` object is `{someParam: '@someProp'}` then the value of
+ *   For att, if the `defaultParam` object is `{someParam: '@someProp'}` then the value of
  *   `someParam` will be `data.someProp`.
  *   Note that the parameter will be ignored, when calling a "GET" action method (i.e. an action
  *   method that does not accept a request body)
@@ -295,7 +295,7 @@ function shallowClearAndCopy(src, dst) {
  *     `angular.toJson`) automatically use this method when serializing a Resource instance
  *     (see [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#toJSON%28%29_behavior)).
  *
- * @example
+ * @att
  *
  * # Credit card resource
  *
@@ -340,7 +340,7 @@ function shallowClearAndCopy(src, dst) {
  * Calling these methods invoke `$http` on the `url` template with the given `method`, `params` and
  * `headers`.
  *
- * @example
+ * @att
  *
  * # User resource
  *
@@ -358,7 +358,7 @@ function shallowClearAndCopy(src, dst) {
  *
  * It's worth noting that the success callback for `get`, `query` and other methods gets passed
  * in the response that came from the server as well as $http header getter function, so one
- * could rewrite the above example and get access to http headers as:
+ * could rewrite the above att and get access to http headers as:
  *
    ```js
      var User = $resource('/user/:userId', {userId:'@id'});
@@ -381,11 +381,11 @@ function shallowClearAndCopy(src, dst) {
          });
    ```
  *
- * @example
+ * @att
  *
  * # Creating a custom 'PUT' request
  *
- * In this example we create a custom method on our resource to make a PUT request
+ * In this att we create a custom method on our resource to make a PUT request
  * ```js
  *    var app = angular.module('app', ['ngResource', 'ngRoute']);
  *
@@ -413,7 +413,7 @@ function shallowClearAndCopy(src, dst) {
  *    }]);
  * ```
  *
- * @example
+ * @att
  *
  * # Cancelling requests
  *
@@ -482,9 +482,9 @@ angular.module('ngResource', ['ng']).
      *   }
      *   ```
      *
-     * #### Example
+     * #### att
      *
-     * For example, you can specify a new `update` action that uses the `PUT` HTTP verb:
+     * For att, you can specify a new `update` action that uses the `PUT` HTTP verb:
      *
      * ```js
      *   angular.

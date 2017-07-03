@@ -1,10 +1,7 @@
 ﻿using ATT_Shape_Hackathon.web.Models;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using WikiDataProvider.Data.Extensions;
 using WikiDataProvider.Data.Interfaces;
 

@@ -349,8 +349,8 @@ ngTouch.factory('$swipe', [function() {
  * @param {expression} ngClick {@link guide/expression Expression} to evaluate
  * upon tap. (Event object is available as `$event`)
  *
- * @example
-    <example module="ngClickExample" deps="angular-touch.js" name="ng-touch-ng-click">
+ * @att
+    <att module="ngClickatt" deps="angular-touch.js" name="ng-touch-ng-click">
       <file name="index.html">
         <button ng-click="count = count + 1" ng-init="count=0">
           Increment
@@ -358,9 +358,9 @@ ngTouch.factory('$swipe', [function() {
         count: {{ count }}
       </file>
       <file name="script.js">
-        angular.module('ngClickExample', ['ngTouch']);
+        angular.module('ngClickatt', ['ngTouch']);
       </file>
-    </example>
+    </att>
  */
 
 var ngTouchClickDirectiveFactory = ['$parse', '$timeout', '$rootElement',
@@ -632,8 +632,8 @@ var ngTouchClickDirectiveFactory = ['$parse', '$timeout', '$rootElement',
  * @param {expression} ngSwipeLeft {@link guide/expression Expression} to evaluate
  * upon left swipe. (Event object is available as `$event`)
  *
- * @example
-    <example module="ngSwipeLeftExample" deps="angular-touch.js" name="ng-swipe-left">
+ * @att
+    <att module="ngSwipeLeftatt" deps="angular-touch.js" name="ng-swipe-left">
       <file name="index.html">
         <div ng-show="!showActions" ng-swipe-left="showActions = true">
           Some list content, like an email in the inbox
@@ -644,9 +644,9 @@ var ngTouchClickDirectiveFactory = ['$parse', '$timeout', '$rootElement',
         </div>
       </file>
       <file name="script.js">
-        angular.module('ngSwipeLeftExample', ['ngTouch']);
+        angular.module('ngSwipeLeftatt', ['ngTouch']);
       </file>
-    </example>
+    </att>
  */
 
 /**
@@ -665,8 +665,8 @@ var ngTouchClickDirectiveFactory = ['$parse', '$timeout', '$rootElement',
  * @param {expression} ngSwipeRight {@link guide/expression Expression} to evaluate
  * upon right swipe. (Event object is available as `$event`)
  *
- * @example
-    <example module="ngSwipeRightExample" deps="angular-touch.js" name="ng-swipe-right">
+ * @att
+    <att module="ngSwipeRightatt" deps="angular-touch.js" name="ng-swipe-right">
       <file name="index.html">
         <div ng-show="!showActions" ng-swipe-left="showActions = true">
           Some list content, like an email in the inbox
@@ -677,9 +677,9 @@ var ngTouchClickDirectiveFactory = ['$parse', '$timeout', '$rootElement',
         </div>
       </file>
       <file name="script.js">
-        angular.module('ngSwipeRightExample', ['ngTouch']);
+        angular.module('ngSwipeRightatt', ['ngTouch']);
       </file>
-    </example>
+    </att>
  */
 
 function makeSwipeDirective(directiveName, direction, eventName) {

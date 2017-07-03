@@ -10,6 +10,7 @@ using WikiWebStarter.Web.Models.Responses;
 
 namespace ATT_Shape_Hackathon.web.Controllers.API
 {
+    [Route("api/people")]
     public class PeopleApiController : ApiController
     {
         // GET api/<controller>

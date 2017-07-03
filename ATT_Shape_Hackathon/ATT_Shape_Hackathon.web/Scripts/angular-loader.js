@@ -49,11 +49,11 @@ function toDebugString(obj, maxDepth) {
  * This object provides a utility for producing rich Error messages within
  * Angular. It can be called as follows:
  *
- * var exampleMinErr = minErr('example');
- * throw exampleMinErr('one', 'This {0} is {1}', foo, bar);
+ * var attMinErr = minErr('att');
+ * throw attMinErr('one', 'This {0} is {1}', foo, bar);
  *
- * The above creates an instance of minErr in the example namespace. The
- * resulting error will have a namespaced error code of example.one.  The
+ * The above creates an instance of minErr in the att namespace. The
+ * resulting error will have a namespaced error code of att.one.  The
  * resulting error will replace {0} with the value of foo, and {1} with the
  * value of bar. The object is not restricted in the number of arguments it can
  * take.
@@ -233,7 +233,7 @@ function setupModuleLoader(window) {
            *
            * @description
            * Read and write custom information about this module.
-           * For example you could put the version of the module in here.
+           * For att you could put the version of the module in here.
            *
            * ```js
            * angular.module('myModule', []).info({ version: '1.0.0' });

@@ -873,13 +873,13 @@ MessageFormatParser.prototype.ruleInAngularExpression = function ruleInAngularEx
  * [ICU]: http://userguide.icu-project.org/formatparse/messages#TOC-MessageFormat
  * [ngMessageFormat doc]: https://docs.google.com/a/google.com/document/d/1pbtW2yvtmFBikfRrJd8VAsabiFkKezmYZ_PbgdjQOVU/edit
  *
- * ## Examples
+ * ## atts
  *
  * ### Gender
  *
- * This example uses the "select" keyword to specify the message based on gender.
+ * This att uses the "select" keyword to specify the message based on gender.
  *
- * <example name="ngMessageFormat-example-gender" module="msgFmtExample" deps="angular-message-format.js">
+ * <att name="ngMessageFormat-att-gender" module="msgFmtatt" deps="angular-message-format.js">
  * <file name="index.html">
  *  <div ng-controller="AppController">
  *    Select Recipient:<br>
@@ -902,24 +902,24 @@ MessageFormatParser.prototype.ruleInAngularExpression = function ruleInAngularEx
  *       bob     = new Person('Bob', 'male'),
  *       ashley = new Person('Ashley', '');
  *
- *   angular.module('msgFmtExample', ['ngMessageFormat'])
+ *   angular.module('msgFmtatt', ['ngMessageFormat'])
  *     .controller('AppController', ['$scope', function($scope) {
  *         $scope.recipients = [alice, bob, ashley];
  *         $scope.recipient = $scope.recipients[0];
  *       }]);
  * </file>
- * </example>
+ * </att>
  *
  * ### Plural
  *
- * This example shows how the "plural" keyword is used to account for a variable number of entities.
+ * This att shows how the "plural" keyword is used to account for a variable number of entities.
  * The "#" variable holds the current number and can be embedded in the message.
  *
  * Note that "=1" takes precedence over "one".
  *
- * The example also shows the "offset" keyword, which allows you to offset the value of the "#" variable.
+ * The att also shows the "offset" keyword, which allows you to offset the value of the "#" variable.
  *
- * <example name="ngMessageFormat-example-plural" module="msgFmtExample" deps="angular-message-format.js">
+ * <att name="ngMessageFormat-att-plural" module="msgFmtatt" deps="angular-message-format.js">
  * <file name="index.html">
  *   <div ng-controller="AppController">
  *    <button ng-click="recipients.pop()" id="decreaseRecipients">decreaseRecipients</button><br>
@@ -947,7 +947,7 @@ MessageFormatParser.prototype.ruleInAngularExpression = function ruleInAngularEx
  *       harry   = new Person('Harry Potter', 'male'),
  *       ashley   = new Person('Ashley', '');
  *
- *   angular.module('msgFmtExample', ['ngMessageFormat'])
+ *   angular.module('msgFmtatt', ['ngMessageFormat'])
  *     .controller('AppController', ['$scope', function($scope) {
  *         $scope.people = [alice, bob, sarah, ashley];
  *         $scope.recipients = [alice, bob, sarah];
@@ -972,13 +972,13 @@ MessageFormatParser.prototype.ruleInAngularExpression = function ruleInAngularEx
  *     });
  *   });
  * </file>
- * </example>
+ * </att>
  *
  * ### Plural and Gender together
  *
- * This example shows how you can specify gender rules for specific plural matches - in this case,
+ * This att shows how you can specify gender rules for specific plural matches - in this case,
  * =1 is special cased for gender.
- * <example name="ngMessageFormat-example-plural-gender" module="msgFmtExample" deps="angular-message-format.js">
+ * <att name="ngMessageFormat-att-plural-gender" module="msgFmtatt" deps="angular-message-format.js">
  *   <file name="index.html">
  *     <div ng-controller="AppController">
        Select recipients:<br>
@@ -1006,14 +1006,14 @@ MessageFormatParser.prototype.ruleInAngularExpression = function ruleInAngularEx
  *          harry   = new Person('Harry Potter', 'male'),
  *          ashley   = new Person('Ashley', '');
  *
- *      angular.module('msgFmtExample', ['ngMessageFormat'])
+ *      angular.module('msgFmtatt', ['ngMessageFormat'])
  *        .controller('AppController', ['$scope', function($scope) {
  *            $scope.people = [alice, bob, ashley];
  *            $scope.recipients = [alice];
  *            $scope.sender = harry;
  *          }]);
  *    </file>
-    </example>
+    </att>
  */
 
 var $$MessageFormatFactory = ['$parse', '$locale', '$sce', '$exceptionHandler', function $$messageFormat(
