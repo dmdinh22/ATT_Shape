@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATT_Shape.domain.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +19,9 @@ namespace ATT_Shape_Hackathon.web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //Register custom exception filter
+            GlobalConfiguration.Configuration.Filters.Add(new WebApiExceptionFilter());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Serialization;
+﻿using ATT_Shape.domain.Handlers;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,10 @@ namespace ATT_Shape_Hackathon.web
 
             var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
             json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
+            // Register custom handlers
+            config.MessageHandlers.Add(new WebApiMissingRouteHandler());
+            config.MessageHandlers.Add(new WebApiBadRequestHandler());
         }
     }
 }
