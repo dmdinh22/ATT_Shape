@@ -23,7 +23,6 @@ namespace ATT_Shape.domain.Services
         {
             string apiUrl = DataHelper.GetApiUrl();
             string viewUrl = DataHelper.GetViewUrl();
-            string userId = DataHelper.GetUserId();
             string body = DataHelper.GetBody();
 
             DataProvider.Instance.ExecuteNonQuery(
@@ -31,7 +30,6 @@ namespace ATT_Shape.domain.Services
                 , "dbo.ExceptionLog_Insert"
                 , inputParamMapper: delegate (SqlParameterCollection paramCollection)
                 {
-                    paramCollection.AddWithValue("@AspNetUserId", userId);
                     paramCollection.AddWithValue("@Message", ex.Message.ToString());
                     paramCollection.AddWithValue("@Type", ex.GetType().Name.ToString());
                     paramCollection.AddWithValue("@ApiUrl", apiUrl);
