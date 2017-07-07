@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Exception.cs" />
+    <Compile Include="Classes\Video.cs" />
     <Compile Include="Exceptions\IdentityResultException.cs" />
     <Compile Include="Exceptions\WebApiBadRequestException.cs" />
     <Compile Include="Exceptions\WebApiMissingRouteException.cs" />
@@ -74,11 +75,13 @@
     <Compile Include="Models\Response\SearchResponse.cs" />
     <Compile Include="Models\Response\SuccessResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\Data\DataHelper.cs" />
     <Compile Include="Services\Data\DataMapper.cs" />
     <Compile Include="Services\Data\DataProvider.cs" />
     <Compile Include="Services\Data\SqlDao.cs" />
     <Compile Include="Services\LoggerService.cs" />
+    <Compile Include="Services\VideoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

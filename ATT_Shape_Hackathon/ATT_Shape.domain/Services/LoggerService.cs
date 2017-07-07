@@ -9,16 +9,8 @@ using ATT_Shape.domain.Classes;
 
 namespace ATT_Shape.domain.Services
 {
-    public class LoggerService
+    public class LoggerService : BaseService
     {
-        /// <summary>
-        /// Method used for returning the connnection string from the web.config or app.config
-        /// </summary>
-        /// <returns>SqlConnection</returns>
-        public static SqlConnection GetConnection()
-        {
-            return new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
-        }
         public static void Insert(System.Exception ex)
         {
             string apiUrl = DataHelper.GetApiUrl();
