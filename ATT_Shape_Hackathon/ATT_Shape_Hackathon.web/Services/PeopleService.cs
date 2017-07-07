@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using WikiDataProvider.Data.Extensions;
-using WikiDataProvider.Data.Interfaces;
 
 namespace ATT_Shape_Hackathon.web.Services
 {
-    public class PeopleService
+    public class PeopleService : BaseService
     {
         public List<Person> SelectAll()
         {
@@ -22,7 +21,7 @@ namespace ATT_Shape_Hackathon.web.Services
                     people.Add(p);
                 });
             return people;
-        }
+        } //SelectAll
 
         public int Insert(Person p)
         {
@@ -47,7 +46,7 @@ namespace ATT_Shape_Hackathon.web.Services
                     int.TryParse(paramCollection["@Id"].Value.ToString(), out i);
                 });
             return i;
-        }
+        } //Insert
 
         public void Update(Person p)
         {
@@ -63,7 +62,7 @@ namespace ATT_Shape_Hackathon.web.Services
                         paramCollection.AddWithValue("@MiddleInitial", p.MiddleInitial.Value);
                 },
                 returnParameters: null);
-        }
+        } //Update
 
         public void Delete(int id)
         {
@@ -74,7 +73,7 @@ namespace ATT_Shape_Hackathon.web.Services
                     paramCollection.AddWithValue("@Id", id);
                 },
                 returnParameters: null);
-        }
+        } //Delete
 
         private Person MapPerson(IDataReader reader)
         {
@@ -89,21 +88,7 @@ namespace ATT_Shape_Hackathon.web.Services
                 p.MiddleInitial = s[0];
 
             return p;
-        }
+        } //MapPerson
 
-        // Alternatively, create a BaseService class
-        // add this method to the base class
-        protected static IDao DataProvider
-        {
-            get { return WikiDataProvider.Data.DataProvider.Instance; }
-        }
-
-        // Alternatively, create a BaseService class
-        // add this method to the base class
-        protected static SqlConnection GetConnection()
-        {
-            return new System.Data.SqlClient.SqlConnection(
-                System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
-        }
     }
 }
