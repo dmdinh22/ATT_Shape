@@ -1,4 +1,5 @@
-﻿using ATT_Shape.domain.Services.Data;
+﻿using ATT_Shape.domain.Models.Request;
+using ATT_Shape.domain.Services.Data;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,8 +12,9 @@ namespace ATT_Shape.domain.Services
 {
     public class VideoService : BaseService
     {
-        public void Insert(Classes.Video v)
+        public static int Insert(VideoAddRequest v)
         {
+            int i = 0;
             DataProvider.Instance.ExecuteNonQuery(
                 GetConnection
                 , "dbo.Video_Insert"
@@ -21,12 +23,18 @@ namespace ATT_Shape.domain.Services
                     paramCollection.AddWithValue("@Title", v.Title);
                     paramCollection.AddWithValue("@Description", v.Description);
                     paramCollection.AddWithValue("@Url", v.Url);
-                }
-                , returnParameters: null
-               );
-            return;
+
+                    SqlParameter param = new SqlParameter("@Id", SqlDbType.Int);
+                    param.Direction = ParameterDirection.Output;
+                    paramCollection.Add(param);
+                },
+                returnParameters: delegate (SqlParameterCollection paramCollection)
+                {
+                    int.TryParse(paramCollection["@Id"].Value.ToString(), out i);
+                });
+            return i;
         }
-        public List<Classes.Video> SelectAll()
+        public static List<Classes.Video> SelectAll()
         {
             List<Classes.Video> vList = null;
 
@@ -45,7 +53,7 @@ namespace ATT_Shape.domain.Services
                );
             return vList;
         }
-        public Classes.Video Select(int id)
+        public static Classes.Video Select(int id)
         {
             Classes.Video v = null;
 
@@ -63,7 +71,7 @@ namespace ATT_Shape.domain.Services
                );
             return v;
         }
-        public void Update(Classes.Video v)
+        public static void Update(VideoUpdateRequest v)
         {
             DataProvider.Instance.ExecuteNonQuery(
                 GetConnection
@@ -79,7 +87,7 @@ namespace ATT_Shape.domain.Services
                );
             return;
         }
-        public void Delete(int id)
+        public static void Delete(int id)
         {
             DataProvider.Instance.ExecuteNonQuery(
                 GetConnection,
