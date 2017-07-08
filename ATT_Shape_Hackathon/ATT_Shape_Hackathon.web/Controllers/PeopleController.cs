@@ -11,7 +11,7 @@ namespace ATT_Shape_Hackathon.web.Controllers
         // GET: People
         public ActionResult Index()
         {
-            return View();
+            return View(); 
         } 
     }
 }
