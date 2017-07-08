@@ -12,6 +12,6 @@ namespace ATT_Shape_Hackathon.web.Controllers
         public ActionResult Index()
         {
             return View();
-        }
+        } 
     }
 }
