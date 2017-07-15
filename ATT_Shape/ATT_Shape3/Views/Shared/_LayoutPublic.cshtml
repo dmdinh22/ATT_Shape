@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>A Team</title>
+
+    <!-- Google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- font awesome -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
+
+    <!-- animate.css -->
+    <link rel="stylesheet" href="/assets/animate/animate.css" />
+    <link rel="stylesheet" href="/assets/animate/set.css" />
+
+    <!-- gallery -->
+    <link rel="stylesheet" href="/assets/gallery/blueimp-gallery.min.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/images/moxie-favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/images/moxie-favicon-16x16.png" type="image/png" sizes="16x16">
+
+
+    <link rel="stylesheet" href="/assets/style.css">
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("styles", required: false)
+
+    <link rel="shortcut icon" href="images/moxie-favicon-16x16.png" type="image/x-icon">
+    <link rel="icon" href="images/moxie-favicon-16x16.png" type="image/x-icon">
+
+</head>
+
+
+<body ng-app="attApp">
+    <div class="topbar animated fadeInLeftBig"></div>
+
+    <!-- Header Starts -->
+    <div class="navbar-wrapper">
+        <div class="container">
+
+            <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Logo Starts -->
+                        <a class="navbar-brand" href="#home">
+                            @*<h2 class="effect-oscar  wowload fadeInUp">A Team</h2>*@
+                            <img src="/images/moxie-logo.png" alt="logo" style="width:170px; position: relative; top:-20px">
+                        </a>
+
+
+                        <!-- #Logo Ends -->
+
+
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+
+
+                    <!-- Nav Starts -->
+                    <div class="navbar-collapse  collapse">
+                        <ul class="nav navbar-nav navbar-right scroll">
+                            <li class="active"><a href="#works">Home</a></li>
+                            <li><a href="#about">Playlists</a></li>
+                            <li><a href="#partners">News</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- #Nav Ends -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="topbar animated fadeInLeftBig"></div>
+    <!-- #Header Starts -->
+
+    @RenderBody()
+
+    <!-- Footer Starts -->
+    <div class="hidden">
+        <h2>GPSLocator</h2>
+        <p>
+            Address: <div id="address"></div>
+            Long, Lat: <div id="lnglat"></div>
+        </p>
+        @{
+            var GMapKeys = "https://maps.googleapis.com/maps/api/js?key=" + @System.Web.Configuration.WebConfigurationManager.AppSettings["GoogleMapsApiKey"].ToString() + "&libraries=places&callback=initMap";
+
+        }
+    </div>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        #map {
+            height: 300px;
+            border-radius: 5px;
+            border: 1px solid silver;
+            background-color: grey;
+        }
+        /* Optional: Makes the page fill the window. */
+        html, body {
+            height: 100%;
+            margin-top: 0;
+            padding: 0;
+        }
+
+        #floating-panel {
+            position: relative;
+            top: 88px;
+            left: 40%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+    </style>
+
+        <div id="map"></div> <!--googleMaps-->
+
+    <!-- # Footer Ends -->
+    <a href="#works" class="gototop "><i class="fa fa-angle-up  fa-3x"></i></a>
+
+
+   
+
+    <!-- Google Maps script -->
+    <script async defer
+            src="@GMapKeys"
+            type="text/javascript">
+    </script>
+
+    <script>
+            var map, infoWindow;
+
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: { lat: 34.04887570, lng: -118.25849820 },
+                    zoom: 15
+                });
+
+                var geocoder = new google.maps.Geocoder();
+
+                function geocodeAddress(geocoder, resultsMap) {
+                    var address = document.getElementById('address').value;
+                    console.log(address);
+                    geocoder.geocode({ 'address': address }, function (results, status) {
+                        if (status === 'OK') {
+                            resultsMap.setCenter(results[0].geometry.location);
+                            var marker = new google.maps.Marker({
+                                map: resultsMap,
+                                position: results[0].geometry.location
+                            });
+                        } else {
+                            alert('Geocode was not successful for the following reason: ' + status);
+                        }
+                    });
+                } //geocodeAddress
+
+                // Try HTML5 geolocation.
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        var pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+
+                        map.setCenter(pos);
+
+                        // for places
+                        var service = new google.maps.places.PlacesService(map);
+                        service.nearbySearch({
+                            location: pos,
+                            radius: 500,
+                            type: ['store']
+                        }, callback); //nearbySearch
+                    }, function () {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    });
+                } else {
+                    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, map.getCenter());
+                } // navigator.geolocation
+
+            }//initMap
+
+            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                infoWindow.setPosition(pos);
+                infoWindow.setContent(browserHasGeolocation ?
+                    'Error: The Geolocation service failed.' :
+                    'Error: Your browser doesn\'t support geolocation.');
+                infoWindow.open(map);
+            } //handleLocationError
+
+            function callback(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    for (var i = 0; i < results.length; i++) {
+                        createMarker(results[i]);
+                    }
+                }
+            } //callback for places library
+
+            var polyCoords = [];
+
+            function createMarker(place) {
+                var placeLoc = place.geometry.location;
+                polyCoords.push(placeLoc);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: place.geometry.location
+                });
+               
+                google.maps.event.addListener(marker, 'click', function () {
+                    infoWindow.setContent(place.name);
+                    infoWindow.open(map, this);
+                });
+            } //createMarker for places
+
+            $(document).ready(function () {
+                var currgeocoder;
+
+                //Set geo location lat and long
+                navigator.geolocation.getCurrentPosition(function (position, html5Error) {
+
+                    geo_loc = processGeolocationResult(position);
+                    currLatLong = geo_loc.split(",");
+                    initializeCurrent(currLatLong[0], currLatLong[1]);
+
+                }); //getCurrentPosition
+
+
+
+                //Get geo location result
+                function processGeolocationResult(position) {
+                    html5Lat = position.coords.latitude; //Get latitude
+                    html5Lon = position.coords.longitude; //Get longitude
+                    html5TimeStamp = position.timestamp; //Get timestamp
+                    html5Accuracy = position.coords.accuracy; //Get accuracy in meters
+                    return (html5Lat).toFixed(8) + ", " + (html5Lon).toFixed(8);
+                } //processGeolocationResult
+
+                //Check value is present or not & call google api function
+                function initializeCurrent(latcurr, longcurr) {
+                    currgeocoder = new google.maps.Geocoder();
+                    console.log(latcurr + "-- ######## --" + longcurr);
+
+                    $("#lnglat").html(latcurr + "," + longcurr);
+
+                    if (latcurr != '' && longcurr != '') {
+                        var myLatlng = new google.maps.LatLng(latcurr, longcurr);
+                        return getCurrentAddress(myLatlng);
+                    }
+                } //initializeCurrent
+
+                //Get current address
+                function getCurrentAddress(location) {
+                    currgeocoder.geocode({
+                        'location': location
+
+                    }, function (results, status) {
+
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            $("#address").html(results[0].formatted_address);
+                        } else {
+                            alert('Geocode was not successful for the following reason: ' + status);
+                        }
+                    });
+                } //getCurrentAddress
+            });
+    </script>
+
+    <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+        <!-- The container for the modal slides -->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox -->
+        <h3 class="title">Title</h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    </div>
+
+   
+    <!-- wow script -->
+    <script src="/assets/wow/wow.min.js"></script>
+
+  
+    <!-- jquery mobile -->
+    <script src="/assets/mobile/touchSwipe.min.js"></script>
+   
+
+    <!-- gallery -->
+    <script src="/assets/gallery/jquery.blueimp-gallery.min.js"></script>
+	@RenderSection("scripts", required: false)
+
+
+    <!-- custom script -->
+    <script src="/assets/script.js"></script>
+
+</body>
+</html>

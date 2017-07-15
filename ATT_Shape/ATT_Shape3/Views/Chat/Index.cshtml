@@ -1,0 +1,167 @@
+﻿
+@{
+    @*==================================== TWILIO CHHAT ==========================================================*@
+Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+
+@section styles{
+    <link href="~/Content/twilio-chat.css" rel="stylesheet" />
+    <style>
+        @@media(max-width: 600px) {
+            .row {
+                width: 350px;
+            }
+
+            .main {
+                margin-top: 110px;
+                margin-left: 0px;
+            }
+
+            #chat-window {
+                width: 350px;
+            }
+
+            #status-row.disconnected {
+                width: 350px;
+            }
+        }
+
+        .footer {
+            margin-left: 0px !important;
+        }
+
+        .footerDiv {
+            position: sticky;
+        }
+
+        .profile-content {
+            background-color: transparent !important;
+        }
+
+        .chatContainer {
+            position: relative !important;
+        }
+
+        .chatBg {
+            background-color: transparent !important;
+            box-shadow: 0 !important;
+        }
+    </style>
+}
+<div id="back-image" class="row">
+    <div class="main  chatBg">
+        <div class="profile-content">
+            <div class="container chatContainer">
+                <div class="row col-md-12 text-center">
+                    <div id="container-chat" class="row">
+                        <div id="chat-app" class="row col-md-8">
+                            <div id="status-row" class="row disconnected">
+                                <div class="row">
+                                    <div id="logo-column" class="col-md-2 col-md-offset-5">
+                                        <img id="logo-image" src="~/Content/TwilioImages/twilio-logo.png" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <span id="status-span">Connected as <b><span id="username-span"></span></b></span>
+                                    <span id="leave-span"><b>&#10005;</b></span>
+                                </div>
+                            </div>
+                            <div id="chat-window" class="col-md-4">
+                                <div id="message-list" class="row disconnected"></div>
+                                <div id="typing-row" class="row disconnected">
+                                </div>
+                                <div id="input-div" class="row">
+                                    <textarea id="input-text" disabled="true" placeholder="Your message"></textarea>
+                                </div>
+                                <div id="connect-panel" class="disconnected row with-shadow">
+                                    <div class="row">
+                                        <div class="text text-center">
+                                            <label for="username-input">Username: </label>
+                                            <input id="username-input" type="text" placeholder="Username" />
+                                            <button id="connect-channel" class="btn btn-default">Connect</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="channel-section" class="col-md-4">
+                            <div id="channel-buttons-group" class="row">
+                                <div class="btn-group" ng-controller="TwilioChatController as Chat">
+                                    <button id="add-channel-btn" type="button" class="btn btn-rose btn-block group"
+                                            ng-show="Chat.addChannel">
+                                        Add Channel<div class="ripple-container"></div>
+                                    </button>
+                                    <div id="new-channel-input-row" class="row not-showing">
+                                        <textarea placeholder="Type channel name" id="new-channel-input" rows="1" maxlength="20" class="channel-element"></textarea>
+                                    </div>
+                                    <button id="delete-channel-btn" type="button" class="btn btn-default btn-block hidden">Delete Current Channel<div class="ripple-container"></div></button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div id="channel-panel">
+                                    <div id="channel-list" class="row not-showing"></div>
+                                    <div id="new-channel-input-row" class="row not-showing">
+                                        <textarea placeholder="Type channel name" id="new-channel-input" rows="1" maxlength="20" class="channel-element"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @*<script src="~/Scripts/jquery-2.1.3.min.js"></script>*@
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
+   
+   <script src="//media.twiliocdn.com/sdk/js/chat/releases/0.11.1/twilio-chat.js"></script>
+
+
+<script src="/Scripts/dateformatter.js"></script>
+    @*<script>
+        debugger;</script>*@
+<script src="//media.twiliocdn.com/sdk/js/common/releases/0.1.5/twilio-common.js"></script>
+    <script type="text/javascript">
+        (function () {
+            "use strict";
+            angular.module("attApp").controller("TwilioChatController", ChatController);
+            ChatController.$inject = ['$scope'];
+            function ChatController($scope) {
+                var vm = this;
+                vm.authRoles = [];
+                //vm.$onInit = _render;
+                vm.addChannel = false;
+                //function _render() {
+                //    checkRoles()
+                //}
+                //function checkRoles() {
+                //    if (vm.serverModel.isAdmin == true || vm.serverModel.isSuperAdmin == true) {
+                //        vm.addChannel = true;
+                //    }
+                //}
+            }
+        })();
+    </script>
+<script src="~/Scripts/jquery-throttle.min.js"></script>
+<script src="~/Scripts/jquery.loadTemplate-1.4.4.min.js"></script>
+    <script src="/Scripts/twiliochat.js"></script>
+}
+<!-- HTML Templates -->
+<script type="text/html" id="message-template">
+    <div class="row no-margin">
+        <div class="row no-margin message-info-row" style="">
+            <div class="col-md-8 left-align"><p data-content="username" class="message-username"></p></div>
+            <div class="col-md-4 right-align"><span data-content="date" class="message-date"></span></div>
+        </div>
+        <div class="row no-margin message-content-row">
+            <div style="" class="col-md-4"><p data-content="body" class="message-body"></p></div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="member-notification-template">
+    <p class="member-status" data-content="status"></p>
+</script>

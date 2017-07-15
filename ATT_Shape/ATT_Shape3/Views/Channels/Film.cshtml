@@ -1,0 +1,60 @@
+﻿
+@{
+	Layout = "~/Views/Shared/_LayoutChannel.cshtml";
+}
+
+@section scripts
+{
+	<script type="text/javascript">
+		(function () {
+			"use strict";
+
+			angular.module("attApp")
+				.controller('channelController', channelController);
+
+			channelController.$inject = ['$scope', '$sce'];
+
+			function channelController($scope, $sce) {
+
+				var vm = this;
+				vm.title = 'Cooking';
+				vm.videoTitle = 'Make your own vegan queso!';
+				vm.videoURL = $sce.trustAsResourceUrl("https://www.youtube.com/embed/videoseries?list=PLevHJO9mgauY_q2pqLa5R_QOk4EHl61m3");
+
+                vm.$scope = $scope;
+                vm.showNews = false;
+                vm.meetUps = [
+                    {
+                        image: 'http://s1.thewrestlinggame.com/public/roster/516/photographer%202.jpg'
+                        , title: 'Photographer In You'
+                        , content: 'Simply put...we at PIY like photography! Come and network with other photographers, join in on workshops and outings, recharge your creative batteries and pick the brains of world class instructors.'
+                        , address: '728 Wilshire Blvd, Los Angeles CA 90052'
+                    },
+                    {
+                        image: 'https://shechive.files.wordpress.com/2011/07/a-favorite-color-33.jpg?quality=100&strip=info'
+                        , title: 'In Living Color Photography'
+                        , content: 'We are a group of lesbian, gay, bi, trans, and queer people who love to get out and take photos. We meet in interesting locations for photography excursions. All skill levels welcome! '
+                        , address: '450 W. 3rd St, Los Angeles CA 90041'
+                    },
+                    {
+                        image: 'http://jonvilma.com/images/still-life-6.jpg'
+                        , title: 'Still Life Photo Group'
+                        , content: 'We are looking for all who are interested in building stronger skills, and creating learning environment. Group photo shoot events range from sport, fashion photography, lighting, landscape etc. '
+                        , address: '611 Venice Blvd, Los Angeles CA 90010'
+                    },
+                ];
+
+				render();
+
+				function render() {
+					console.log("channel page startup");
+				}
+			};
+
+		})();
+
+	</script>
+}
+
+
+

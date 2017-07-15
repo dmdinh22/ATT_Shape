@@ -1,0 +1,74 @@
+﻿
+    <script type="text/ng-template" id="meetUpWidget">
+    <div class="widget-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="text-center" id="panelTitle">Happening Within Your Area</h4>
+                        </div>
+                        <div class="panel-body">
+                            <!--In here we want to display various meet ups
+                            along with user groups(?) within x mile radius of the user-->
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </script>
+
+<script src="~/Scripts/App/attApp.js"></script>
+<script src="~/Scripts/App/att.js"></script>
+<script src="~/Scripts/App/Services/meetup.js"></script>
+<script src="~/Scripts/App/att.Services.Meetup.js"></script>
+
+<script type="text/javascript">
+        (function () {
+            "use strict";
+            angular
+                .module("attApp").controller("meetupController", MeetupController);
+
+            MeetupController.$inject = ['$scope', 'meetupService'];
+
+            function MeetupController($scope, meetupService) {
+                var vm = this;
+                vm.$scope = $scope;
+                vm.meetupService = meetupService;
+                vm.getCloseEvents = _getCloseEvents;
+                vm.onGetCloseEventsSuccess = _onGetCloseEventsSuccess;
+
+                vm.items = [];
+
+                //THE FOLD
+                render();
+
+                function render() {
+                    console.log("rendering meetup widget...");
+                    vm.getCloseEvents();
+                }
+
+                function _getCloseEvents() {
+                    console.log("getting all close events for this topic");
+                    var cars = "https://api.meetup.com/2/open_events?and_text=False&offset=0&format=json&lon=-118.258666&limited_events=False&topic=cars&photo-host=public&page=500&radius=25.0&lat=34.049385&desc=False&status=upcoming&sig_id=231378481&sig=0f5d0dafc011bebb5ef9aa9533370713e8c74f60"
+
+                    vm.meetupService.getCloseEvents(cars, onGetCloseEventsSuccess, onError);
+                }//_getCloseEvents
+
+                function _onGetCloseEventsSuccess(data) {
+                    console.log("got all close meetups successfully");
+                    vm.items = data.items;
+                    console.log(data);
+                } //_onGetCloseEventsSuccess
+
+                function onError(xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.responseText);
+                } //onError
+            }
+
+        })();
+
+</script>

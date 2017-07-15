@@ -1,0 +1,914 @@
+﻿@{
+	Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+
+
+<!-- Header -->
+<style>
+    #title {
+        font-size: 19pt;
+        text-align: center;
+    }
+
+    #works {
+        margin-top: 80px;
+    }
+
+	.video-recom {
+		margin-bottom: 20px;
+	}
+
+	.type-it {
+		font-family: 'Open Sans', sans-serif;
+		color: #00a9c6;
+		font-weight: bold;
+	}
+
+	.small-title {
+		color: #00a9c6;
+	}
+
+	.medium-title {
+		color: gray;
+		font-weight: bold;
+	}
+
+	.main-text {
+		position: absolute;
+		top: 50px;
+		width: 96.66666666666666%;
+		color: #FFF;
+	}
+
+	.btn-min-block {
+		min-width: 145px;
+		line-height: 81px;
+	}
+
+	.btn-clear {
+		color: #FFF;
+		background-color: transparent;
+		border-color: #FFF;
+		margin-right: 15px;
+	}
+
+		.btn-clear:hover {
+			color: #000;
+			background-color: #FFF;
+		}
+
+	.effect-oscar {
+		width: 250px;
+		height: 200px;
+	}
+
+	.news-icon {
+		max-height: 100px;
+		max-width: 150px;
+	}
+
+    h4 {
+        color: white;
+        font-weight: bold;
+    }
+    /* centered columns styles */
+    .row-centered {
+        text-align: center;
+    }
+
+    .col-centered {
+        display: inline-block;
+        float: none;
+        /* reset the text-align */
+        text-align: left;
+        /* inline-block space fix */
+        margin-right: -4px;
+    }
+
+    .footer {
+        color:#00A9C6;
+    }
+
+</style>
+
+<div ng-app="attApp" ng-controller="indexController as index" id="works" class="container clearfix grid">
+
+	<div id="works" class="container clearfix grid">
+
+		<!--category 1-->
+
+        <figure class="effect-oscar  wowload fadeIn">
+            <img src="https://media.giphy.com/media/mKqzYLWto2pfG/giphy.gif" alt="img01" />
+            <figcaption>
+                <h2 id="title">Film</h2>
+                <p>
+                    Currated By A-List Actors<br>
+                    <a href="/images/portfolio/1.jpg" title="1" data-gallery>Moxie Me</a>
+                </p>
+            </figcaption>
+        </figure>
+
+		<!--category 2-->
+
+        <figure class="effect-oscar  wowload fadeInUp">
+            <img src="https://media.giphy.com/media/psTAvR8kKd4XK/giphy.gif" alt="img01" />
+            <figcaption>
+                <h2 id="title">Beauty</h2>
+                <p>
+                    Our Favorite Beauty Tips<br>
+                    <a href="/images/portfolio/2.jpg" title="1" data-gallery>Moxie Me</a>
+                </p>
+            </figcaption>
+        </figure>
+
+		<!--category 3-->
+
+        <figure class="effect-oscar  wowload fadeInUp">
+            <img src="https://media.giphy.com/media/TfKNCRlmlC5s4/giphy.gif" alt="img01" />
+            <figcaption>
+                <h2 id="title">Start Ups</h2>
+                <p>
+                    Launch Your Big Idea<br>
+                    <a href="/images/portfolio/3.jpg" title="1" data-gallery>MoxieMe</a>
+                </p>
+            </figcaption>
+        </figure>
+
+		<!--category 4-->
+
+        <figure class="effect-oscar  wowload fadeInUp">
+            <img src="https://media.giphy.com/media/EUwZXrt0CeW9W/giphy.gif" alt="img01" class="gif" />
+            <figcaption>
+                <h2 id="title">Coding</h2>
+                <p>
+                    Come Build The Future<br>
+					<a href="/Channels/CodeCategory">MoxieMe</a>
+                </p>
+            </figcaption>
+        </figure>
+
+		<!--category 5-->
+
+        <figure class="effect-oscar  wowload fadeInUp">
+            <img src="https://media.giphy.com/media/JVVrrRjdCEJ6o/giphy.gif" alt="img01" class="gif" />
+            <figcaption>
+                <h2 id="title">Food</h2>
+                <p>
+                    Healthy Meals For The Family<br>
+                    <a href="/Channels/CookingCategory">View more</a>
+                </p>
+            </figcaption>
+        </figure>
+
+		<!--category 6-->
+
+        <figure class="effect-oscar  wowload fadeInUp">
+            <img src="https://media.giphy.com/media/WVv4a73v69hWU/giphy.gif" alt="img01" />
+            <figcaption>
+                <h2 id="title">Cars</h2>
+                <p>
+                    All Things Cars<br>
+                    <a href="/Channels/CarCategory" title="1">View more</a>
+                </p>
+            </figcaption>
+        </figure>
+    </div>
+</div>
+<!-- Header -->
+<!-- Recommended -->
+<div id="about" class="container spacer about">
+    <div>
+        <h1 class="type-it">Featured Playlists</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <h4>Recommended</h4>
+            <hr />
+
+            <!--left carousel begins here-->
+
+            <div id="carousel-testimonials" class="carousel testimonails  wowload fadeInUp" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active animated bounceInUp row">
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0; padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/zWFoZb6EiwU" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">How to Become a Polyglot</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/4oLKZtK9IwM" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title"> Keeping Up with High-Fashion</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/iH4JJuoHQHc" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title"> Know Cultural Customs in Germany</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  animated bounceInUp row">
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0; padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/zWFoZb6EiwU" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Six steps to Overcoming Stage fright for Actors</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/4oLKZtK9IwM" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">How to Pass CompTia Exam</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/iH4JJuoHQHc" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Learning ReactJs</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  animated bounceInUp row">
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0; padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/zWFoZb6EiwU" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Five Healthy Breakfast Recipes</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/4oLKZtK9IwM" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Simple Solutions to Build Great Code</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/iH4JJuoHQHc" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Enhance Your Ability to Read Faster</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-testimonials" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-testimonials" data-slide-to="1"></li>
+                    <li data-target="#carousel-testimonials" data-slide-to="2"></li>
+                </ol>
+                <!-- Indicators -->
+            </div>
+
+            <!--left carousel ends here-->
+
+        </div>
+
+        <div class="col-sm-4">
+            <h4>Trending</h4>
+            <hr />
+
+            <!--center carousel begins here-->
+
+            <div id="carousel-testimonials" class="carousel testimonails wowload fadeInUp" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active animated bounceInUp row">
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0; padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/zWFoZb6EiwU" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">1o Easy Steps to Building a PC</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/4oLKZtK9IwM" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Comprehensive guide to Hiking</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/iH4JJuoHQHc" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Solving Common Hardware Malfunctions</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  animated bounceInUp row">
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0; padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/zWFoZb6EiwU" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Guide to Online RolePlaying (RPG) Games</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/4oLKZtK9IwM" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Investing 101</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/iH4JJuoHQHc" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Understanding Buddhist Meditation Practices</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  animated bounceInUp row">
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0; padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/zWFoZb6EiwU" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Best Cooking Techniques </h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/4oLKZtK9IwM" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">New Chefs Step-by-Step Meal Preparation</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/iH4JJuoHQHc" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Create Your Own Spicy Salmon Sushi Roll</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-testimonials" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-testimonials" data-slide-to="1"></li>
+                    <li data-target="#carousel-testimonials" data-slide-to="2"></li>
+                </ol>
+                <!-- Indicators -->
+            </div>
+
+            <!--center carousel ends here-->
+
+        </div>
+
+        <div class="col-sm-4">
+            <h4>Watch It Again</h4>
+            <hr />
+
+            <!--right carousel begins here-->
+
+                <div id="carousel-testimonials" class="carousel testimonails wowload fadeInUp" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item active animated bounceInUp row">
+                            <div class="col-sm-12 video-recom">
+                                <div class="col-sm-4">
+                                    <div style="position:relative;height:0; padding-bottom:56.21%; margin-top:18px;">
+                                        <iframe src="https://www.youtube.com/embed/G_JkH4QhzGQ" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h5 class="small-title">Book Publishing Process</h5>
+                                    <p><small>How to get your book published</small></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 video-recom">
+                                <div class="col-sm-4">
+                                    <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                        <iframe src="https://www.youtube.com/embed/tShavGuo0_E" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h5 class="small-title">Be a better speaker</h5>
+                                    <p><small>How to become a more confident speaker.</small></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 video-recom">
+                                <div class="col-sm-4">
+                                    <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                        <iframe src="https://www.youtube.com/embed/lrk4oY7UxpQ" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h5 class="small-title">How does the US. government work?</h5>
+                                    <p><small>Learn how the US government works with a crash course in US Government and Politics.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item  animated bounceInUp row">
+                            <div class="col-sm-12 video-recom">
+                                <div class="col-sm-4">
+                                    <div style="position:relative;height:0; padding-bottom:56.21%; margin-top:18px;">
+                                        <iframe src="https://www.youtube.com/embed/ifrHogDujXw" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h5 class="small-title">What is Climate Change?</h5>
+                                    <p><small>A straightforward explanation of Climate Change.</small></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 video-recom">
+                                <div class="col-sm-4">
+                                    <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                        <iframe src="https://www.youtube.com/embed/R4vDqlKMbrk" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h5 class="small-title">How to make really good scrambled eggs.</h5>
+                                    <p><small>Learn a no-fail technique for making light and fluffy eggs every time.</small></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 video-recom">
+                                <div class="col-sm-4">
+                                    <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                        <iframe src="https://www.youtube.com/embed/ONVQCK_-rKc" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h5 class="small-title">How to knit</h5>
+                                    <p><small>How to knit if you're an absolute beginner. </small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item  animated bounceInUp row">
+                            <div class="col-sm-12 video-recom">
+                                <div class="col-sm-4">
+                                    <div style="position:relative;height:0; padding-bottom:56.21%; margin-top:18px;">
+                                        <iframe src="https://www.youtube.com/embed/wirV265ZYSw" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h5 class="small-title">How to Meditate</h5>
+                                    <p><small>How To Meditate-the most effective meditation technique, plus tips for how to avoid the most common meditation mistakes.</small></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 video-recom">
+                                <div class="col-sm-4">
+                                    <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                        <iframe src="https://www.youtube.com/embed/Raa0vBXA8OQ" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h5 class="small-title">Learn ASL Signs For Beginners</h5>
+                                    <p><small>Want to learn American Sign Language? Start here!</small></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 video-recom">
+                                <div class="col-sm-4">
+                                    <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                        <iframe src="https://www.youtube.com/embed/Xh_Neg-Hp84" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h5 class="small-title">How to make a unicorn cake.</h5>
+                                    <p><small>Today I made a funfetti Unicorn cake!</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <div id="carousel-testimonials" class="carousel testimonails wowload fadeInUp" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active animated bounceInUp row">
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0; padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/zWFoZb6EiwU" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">How To Bake Acai Berry Cheesecake in 12 Steps</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/4oLKZtK9IwM" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Beauty Trends For Life</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/iH4JJuoHQHc" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Parkour For Beginners</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  animated bounceInUp row">
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0; padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/zWFoZb6EiwU" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Maintaining A Winner's Mindset</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/4oLKZtK9IwM" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Voice Acting Basics</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/iH4JJuoHQHc" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Traveling Tips For Business Professionals</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  animated bounceInUp row">
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0; padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/zWFoZb6EiwU" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Photo Perfect Lighting Guidelines</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/4oLKZtK9IwM" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Fundamental Javascript Concepts</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 video-recom">
+                            <div class="col-sm-4">
+                                <div style="position:relative;height:0;padding-bottom:56.21%; margin-top:18px;">
+                                    <iframe src="https://www.youtube.com/embed/iH4JJuoHQHc" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="small-title">Exploring Adobe Creative Cloud</h5>
+                                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-testimonials" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-testimonials" data-slide-to="1"></li>
+                    <li data-target="#carousel-testimonials" data-slide-to="2"></li>
+                </ol>
+                <!-- Indicators -->
+            </div>
+
+            <!--right carousel ends here-->
+
+        </div>
+    </div>
+</div>
+<!-- #Recommended -->
+<!-- About Starts -->
+<div class="highlight-info">
+    <div class="overlay spacer">
+        <div class="container" id="counter-animate">
+            <div class="fh5co-section-content-wrap">
+                <div class="fh5co-section-content">
+                    <div class="row text-center  wowload fadeInDownBig">
+                        <div class="col-md-4 text-center to-animate">
+                            <h1><span class="timer fh5co-counter js-counter" data-from="0" data-to="800" data-speed="5000" data-refresh-interval="50"></span></h1>
+                            <img width="90" height="96" align="top" src="https://daks2k3a4ib2z.cloudfront.net/572733ce639cfa231e79f20e/5729e740f96a6e44489af91d_tvicon.svg">
+                            <h4><span class="fh5co-counter-label">Channels</span></h4>
+                        </div>
+                        <div class="col-md-4 text-center to-animate">
+                            <h1><span class="timer" data-from="0" data-to="150" data-speed="5000" data-refresh-interval="50"></span></h1>
+
+
+                            <img width="85" height="80" align="middle" src="https://static1.squarespace.com/static/5596b8dee4b040c14b0c0258/t/559e72c5e4b0e8dddc483815/1436447432964/icon+blue+people.png">
+                            <h4>
+                                <span class="fh5co-counter-label">Total Users</span>
+                            </h4>
+                        </div>
+                        <div class="col-sm-3 col-xs-6 text-center to-animate">
+
+                            <h1><span class="timer fh5co-counter js-counter" data-from="0" data-to="95" data-speed="95" data-refresh-interval="50"></span></h1>
+
+                            <svg id="subscribe" align="middle" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" height="80" viewBox="0 0 24 24" width="85">
+                                <path d="M20 8H4V6h16v2zm-2-6H6v2h12V2zm4 10v8c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-8c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2zm-6 4l-6-3.27v6.53L16 16z" />
+                                <path d="M0 0h24v24H0z" fill="none" />
+                            </svg>
+                            <h4>
+                                <span class="fh5co-counter-label">Subscriptions</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Ends -->
+<div id="partners" class="spacer ">
+    <h1 class="type-it col-sm-12">Moxie News</h1>
+    <div class="container">
+        <div class="row video-recom">
+            <div class="col-sm-9">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="http://placehold.it/1200x500/3498db/2980b9" alt="First slide">
+                            <div class="carousel-caption">
+                                <h3>
+                                    First slide
+                                </h3>
+                                <p>
+                                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="http://placehold.it/1200x500/9b59b6/8e44ad" alt="Second slide">
+                            <div class="carousel-caption">
+                                <h3>
+                                    Second slide
+                                </h3>
+                                <p>
+                                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="http://placehold.it/1200x500/34495e/2c3e50" alt="Third slide">
+                            <div class="carousel-caption">
+                                <h3>
+                                    Third slide
+                                </h3>
+                                <p>
+                                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a><a class="right carousel-control"
+                           href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right">
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="col-sm-12">
+                    <h5 class="small-title">Hello World</h5>
+                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                </div>
+                <div class="col-sm-12">
+                    <h5 class="small-title">Hello World</h5>
+                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                </div>
+                <div class="col-sm-12">
+                    <h5 class="small-title">Hello World</h5>
+                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>World</h4>
+                <hr />
+                <div class="col-sm-12 video-recom">
+                    <div class="col-sm-4">
+                        <img class="news-icon" src="https://specials-images.forbesimg.com/imageserve/505224246/960x0.jpg?fit=scale" />
+                    </div>
+                    <div class="col-sm-8">
+                        <h5 class="small-title">Hello World</h5>
+                        <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor adipiscing elit, sed do eiusmod tempor</small></p>
+                    </div>
+                </div>
+                <div class="col-sm-12 video-recom">
+                    <div class="col-sm-4">
+                        <img class="news-icon" src="https://specials-images.forbesimg.com/imageserve/505224246/960x0.jpg?fit=scale" />
+                    </div>
+                    <div class="col-sm-8">
+                        <h5 class="small-title">Hello World</h5>
+                        <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor adipiscing elit, sed do eiusmod tempor</small></p>
+                    </div>
+                </div>
+                <div class="col-sm-12 video-recom">
+                    <div class="col-sm-4">
+                        <img class="news-icon" src="https://specials-images.forbesimg.com/imageserve/505224246/960x0.jpg?fit=scale" />
+                    </div>
+                    <div class="col-sm-8">
+                        <h5 class="small-title">Hello World</h5>
+                        <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor adipiscing elit, sed do eiusmod tempor</small></p>
+                    </div>
+                </div>
+                <div class="col-sm-12 video-recom">
+                    <div class="col-sm-4">
+                        <img class="news-icon" src="https://specials-images.forbesimg.com/imageserve/505224246/960x0.jpg?fit=scale" />
+                    </div>
+                    <div class="col-sm-8">
+                        <h5 class="small-title">Hello World</h5>
+                        <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor adipiscing elit, sed do eiusmod tempor</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <h4>Latest</h4>
+                <hr />
+                <div class="col-sm-12">
+                    <h5 class="small-title">Hello World</h5>
+                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                </div>
+                <div class="col-sm-12">
+                    <h5 class="small-title">Hello World</h5>
+                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                </div>
+                <div class="col-sm-12">
+                    <h5 class="small-title">Hello World</h5>
+                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                </div>
+                <div class="col-sm-12">
+                    <h5 class="small-title">Hello World</h5>
+                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                </div>
+                <div class="col-sm-12">
+                    <h5 class="small-title">Hello World</h5>
+                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</small></p>
+                </div>
+            </div>
+            <div class="col-sm-2" style="margin-top:30px;">
+                <a href="http://www.westedgedesignfair.com">
+                    <img src="http://www.westedgedesignfair.com/wp-content/uploads/2014/07/WestEdge-2016-160x600-Visit-Us.jpg" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Footer-->
+<hr>
+<footer class="footer footer-black footer-big ng-scope" id="publicFooter">
+    <div class="container">
+        <div class="content" id="footer">
+            <div class="row row-centered">
+                <div class="col-md-4 col-centered">
+                    <h4 class="text-center col-md-">Moxie Nation</h4>
+                    <h5 class="text-center">Users trying to build Moxie near you!</h5>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <hr>
+
+</footer>
+@section scripts{
+<!--jQuery-->
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery-countTo-master/jquery.countTo.js"></script>
+<script type="text/javascript">
+    $(".timer").countTo();
+    
+		(function () {
+			"use strict";
+
+			angular.module("attApp")
+				.controller('indexController', indexController);
+
+			indexController.$inject = ['$scope', '$sce'];
+
+			function indexController($scope, $sce) {
+
+				var vm = this;
+				vm.videoURL1 = $sce.trustAsResourceUrl("https://www.youtube.com/embed/videoseries?list=PLevHJO9mgauaTZC1gJrlBDTaZD5Qqh_TC");
+				vm.videoURL2 = $sce.trustAsResourceUrl("https://www.youtube.com/embed/videoseries?list=PLevHJO9mgauaTZC1gJrlBDTaZD5Qqh_TC");
+				vm.videoURL3 = $sce.trustAsResourceUrl("https://www.youtube.com/embed/videoseries?list=PLevHJO9mgauaTZC1gJrlBDTaZD5Qqh_TC");
+
+				vm.$scope = $scope;
+
+				render();
+
+				function render() {
+					console.log("channel page startup");
+				}
+			};
+
+		})();
+
+	</script>
+}
+

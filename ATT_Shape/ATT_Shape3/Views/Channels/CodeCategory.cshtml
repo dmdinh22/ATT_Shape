@@ -1,0 +1,38 @@
+﻿
+@{
+	Layout = "~/Views/Shared/_LayoutChannelCategories.cshtml";
+}
+
+@section scripts
+{
+	<script type="text/javascript">
+		(function () {
+			"use strict";
+
+			angular.module("attApp")
+				.controller('channelCategoryController', channelCategoryController);
+
+			channelCategoryController.$inject = ['$scope', '$sce'];
+
+			function channelCategoryController($scope, $sce) {
+
+				var vm = this;
+				vm.category = 'Code';
+				vm.channels = [{ url: "http://www.hdwallpaper.nu/wp-content/uploads/2017/01/binary-19-1024x576.jpg", title: "Python" }, { url: "https://udemy-images.udemy.com/course/750x422/382002_5d4a.jpg", title: "CSharp" }, { url: "http://codecondo.com/wp-content/uploads/2014/04/5-Coding-Challenges-to-Help-You-Train-Your-Brain.jpg?x94435", title: "Java" }, { url: "https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAVeAAAAJDI5YTBiNjc0LWM4MWUtNDhlMi05MTM2LTcwOTkwZjg3MDg1Yw.png", title: "React" }, {
+					url: "http://cdn.makeuseof.com/wp-content/uploads/2015/01/javascript-js2.jpg?x92042", title: "Javascript" }, { url: "https://www.welivesecurity.com/wp-content/uploads/2013/01/014033223-html-computer-code-background--623x432.jpg", title: "SQLServer" }, ]
+				vm.$scope = $scope;
+				vm.showNews = false;
+				render();
+
+				function render() {
+					console.log("channel page startup");
+				}
+			};
+
+		})();
+
+	</script>
+}
+
+
+

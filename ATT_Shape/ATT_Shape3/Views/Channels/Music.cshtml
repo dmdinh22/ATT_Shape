@@ -1,0 +1,79 @@
+﻿
+@{
+	Layout = "~/Views/Shared/_LayoutChannel.cshtml";
+}
+
+@section scripts
+{
+	<script type="text/javascript">
+		(function () {
+			"use strict";
+
+			angular.module("attApp")
+				.controller('channelController', channelController);
+
+			channelController.$inject = ['$scope', '$sce'];
+
+			function channelController($scope, $sce) {
+
+				var vm = this;
+				vm.title = 'Cooking';
+				vm.videoTitle = 'Make your own vegan queso!';
+				vm.meetUps = ['MeetUp1', 'MeetUp2', 'MeetUp3', 'MeetUp4'];
+				vm.videoURL = $sce.trustAsResourceUrl("https://www.youtube.com/embed/videoseries?list=PLevHJO9mgauY_q2pqLa5R_QOk4EHl61m3");
+
+				vm.$scope = $scope;
+				vm.showNews = false;
+                vm.meetUps = [
+                    {
+                        image: 'http://s1.thewrestlinggame.com/public/roster/516/photographer%202.jpg'
+                        , title: 'Los Angeles EDM Club'
+                        , content: 'The purpose of this group is to create spaces (online and offline) where current MIPs network, share and gain industry insights, develop and nurture new relationships, and simply be a part of a community of professionals. '
+                        , address: '728 Wilshire Blvd, Los Angeles CA 90052'
+                    },
+                    {
+                        image: 'http://www.clker.com/cliparts/6/2/7/8/1197125770768822602johnny_automatic_music_group.svg.hi.png'
+                        , title: 'LA Music Creators'
+                        , content: 'UOur goal is to provide the best environment possible for LA\'s local artists, engineers, and producers to connect, collaborate, and cross- pollinate. This group is all about learning and supporting one another in the craft of creating good music.'
+                        , address: '450 W. 3rd St, Los Angeles CA 90041'
+                    },
+                    {
+                        image: 'https://secure.meetupstatic.com/photos/event/e/3/a/6/600_459958278.jpeg'
+                        , title: 'Electronic Music Open Night'
+                        , content: 'Electronic Music Producers, DJs, Vocalists, Dancers, & Visual Artists have a location to perform in front of a live audience in North Hollywood'
+                        , address: '611 Venice Blvd, Los Angeles CA 90010'
+                    },
+                    {
+                        image: 'http://www.6am-group.com/wp-content/uploads/2016/12/90s-rave-1.jpg'
+                        , title: 'Music Festival Goers'
+                        , content: 'Are you ready to meet, greet, rave, repeat?  Well then, you\'ve come to the right place!  Our group shares a common passion--we live for Electronic Dance Music.'
+                        , address: '728 Wilshire Blvd, Los Angeles CA 90052'
+                    },
+                    {
+                        image: 'http://www.clker.com/cliparts/6/2/7/8/1197125770768822602johnny_automatic_music_group.svg.hi.png'
+                        , title: 'Music Lovers United'
+                        , content: 'This group is tapping into the raw, synergetic, and authentic experience of music. No longer is a live music performance a spectator event, it is now interactive. '
+                        , address: '10361 West Pico Boulevard, Los Angeles, CA, 90064'
+                    },
+                    {
+                        image: 'https://secure.meetupstatic.com/photos/event/e/3/a/6/600_459958278.jpeg'
+                        , title: 'Electronic Music Open Night'
+                        , content: 'Electronic Music Producers, DJs, Vocalists, Dancers, & Visual Artists have a location to perform in front of a live audience in North Hollywood'
+                        , address: '611 Venice Blvd, Los Angeles CA 90010'
+                    },
+                ];
+
+				render();
+
+				function render() {
+					console.log("channel page startup");
+				}
+			};
+
+		})();
+
+	</script>
+}
+
+
+

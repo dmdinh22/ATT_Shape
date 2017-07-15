@@ -1,0 +1,110 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutChannel.cshtml";
+}
+
+@section scripts
+{
+    <script src="~/Scripts/App/att.services.sms.js"></script>
+    <script src="~/Scripts/App/Services/sms.js"></script>
+    <script type="text/javascript">
+        (function () {
+            "use strict";
+
+
+            angular.module("attApp")
+				.controller('channelController', channelController);
+
+			channelController.$inject = ['$scope', '$sce', 'smsService'];
+
+			function channelController($scope, $sce, smsService) {
+
+                var vm = this;
+                vm.$scope = $scope;
+                vm.smsService = smsService;
+                vm.title = 'Muscle Cars';
+                vm.showNews = false;
+				vm.videoTitle = 'Check out these action packed car videos, learn a thing or two, and rev yourself up for a good day!';
+				vm.videoURL = $sce.trustAsResourceUrl("https://www.youtube.com/embed/videoseries?list=PLevHJO9mgauZKm2rp2gQXDDmJ4eQB1IlF");
+				vm.meetUps = [
+					{
+                        image: 'http://www.m5board.com/vbulletin/attachments/e60-m5-e61-m5-touring-discussion/169788d1355181844-socal-welcomes-member-acg-m5-meet-canyon-run-photo-content-acg-meet-3.jpg'
+                        , title: 'Scenic Drive to Mount Baldy'
+                        , content: "We will meet-up in the Farmer Boy's Parking lot on Irwindale Ave just North of the 210 frwy.From there we will take Sierra Madre Ave. & drive across Azusa & Glendora to Glendora Mtn.Road(GMR).From there we will take the scenic Glendora Ridge Road to Mt. Baldy Rd., where we will have lunch at the Mt.Baldy Lodge. After lunch we will visit the Mt.Baldy Visitor Center & then drive up to the top of Mt.Baldy properly named Mt. San Antonio, which is the highest peak in the San Gabriel's. Please note that this road is very scenic, very steep, so if you have a 451, I would familiarize yourself with using your paddle or floor shifter as manual mode will be required. We will have to shift into 1st gear on some of the grades. The 453's should easily conquer Mt.Baldy Rd."
+                        , address: '11030 Jefferson Blvd, Culver City, CA'
+					},
+					{
+						image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaqLy4QSaL1LpoChQLvf251hhJUFeqvfZf469sIJ16LW-nZa2t'
+                        , title: 'PCH, Tuna Canyon, and Malibu Drive'
+                        , content: 'Meet up at Pavillions in Culver City. Drive up the 405 and 10 to get onto PCH. Drive up PCH then right onto Topanga Canyon Drive. Left onto Tuna Canyon Drive back to PCH. Drive further into Malibu and have brunch at Malibu Farm Pier Cafe.'
+                        , address: '11030 Jefferson Blvd, Culver City, CA 90230'
+					}
+				];
+				vm.meetUpsII = [
+					{
+					    image: 'http://media.caranddriver.com/images/media/51/2017-10best-lead-photo-672628-s-original.jpg'
+                        , title: 'Scenic Drive to Mount Baldy'
+                        , content: "We will meet-up in the Farmer Boy's Parking lot on Irwindale Ave just North of the 210 frwy.From there we will take Sierra Madre Ave. & drive across Azusa & Glendora to Glendora Mtn.Road(GMR).From there we will take the scenic Glendora Ridge Road to Mt. Baldy Rd., where we will have lunch at the Mt.Baldy Lodge. After lunch we will visit the Mt.Baldy Visitor Center & then drive up to the top of Mt.Baldy properly named Mt. San Antonio, which is the highest peak in the San Gabriel's. Please note that this road is very scenic, very steep, so if you have a 451, I would familiarize yourself with using your paddle or floor shifter as manual mode will be required. We will have to shift into 1st gear on some of the grades. The 453's should easily conquer Mt.Baldy Rd."
+                        , address: '11030 Jefferson Blvd, Culver City, CA'
+					},
+					{
+					    image: 'https://media.ed.edmunds-media.com/honda/cr-v/2017/oem/2017_honda_cr-v_4dr-suv_touring_fq_oem_14_717.jpg'
+                        , title: 'PCH, Tuna Canyon, and Malibu Drive'
+                        , content: 'Meet up at Pavillions in Culver City. Drive up the 405 and 10 to get onto PCH. Drive up PCH then right onto Topanga Canyon Drive. Left onto Tuna Canyon Drive back to PCH. Drive further into Malibu and have brunch at Malibu Farm Pier Cafe.'
+                        , address: '11030 Jefferson Blvd, Culver City, CA 90230'
+					}
+				];
+				vm.blogArticles = [
+					{
+					    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkM7yi4mcZmCz_myF_UR-UkODo1WshxEISfxL0QtxP56JpwADK'
+						, title: 'New BMW Release'
+						, content: 'Tellus id interdum velit laoreet id donec ultrices tincidunt. Amet nisl purus in mollis. Vitae justo eget magna fermentum iaculis eu non diam phasellus. '
+					},
+					{
+						image: 'http://o.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/750x422/quality/95/https://s.blogcdn.com/slideshows/images/slides/425/787/3/S4257873/slug/l/01-legacy-chevy-napco-1.jpg'
+						, title: 'History of Chevy trucks'
+						, content: 'Morbi enim nunc faucibus a pellentesque sit. Risus in hendrerit gravida rutrum quisque non tellus orci ac. Lacus vestibulum sed arcu non. Donec et odio.'
+					},
+					{
+					    image: 'http://i.auto-bild.de/ir_img/1/2/7/8/1/4/2/Mercedes-Freightliner-Inspiration-Truck-1200x800-e2b7efba23f0b8f7.jpg'
+						, title: 'Luxury trucker life'
+						, content: 'Sit amet nisl purus in mollis. Enim nulla aliquet porttitor lacus luctus accumsan tortor. Nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus.'
+					},
+                ];
+
+				
+                render();
+
+                function render() {
+                    console.log("channel page startup");
+                    setTimeout(_sendSms, 20000);
+                }
+
+                function _sendSms() {
+                    //$scope.$apply(function () {
+                        vm.showNews = true;
+                        var model = {
+                            addresses: ["tel:3612050810"
+                            , "tel:9098594315"
+                            , "tel:3103518077"]
+
+                        };
+                        vm.smsService.send(model, _onSuccess, _onFail);
+                   // });
+                }
+
+                function _onSuccess(response) {
+                    console.log(response);
+                }
+                function _onFail(jq) {
+                    console.log(jq);
+                }
+            };
+
+        })();
+
+    </script>
+}
+
+
+

@@ -1,0 +1,79 @@
+﻿
+@{
+	Layout = "~/Views/Shared/_LayoutChannel.cshtml";
+}
+
+@section scripts
+{
+	<script type="text/javascript">
+		(function () {
+			"use strict";
+
+			angular.module("attApp")
+				.controller('channelController', channelController);
+
+			channelController.$inject = ['$scope', '$sce'];
+
+			function channelController($scope, $sce) {
+
+				var vm = this;
+				vm.title = 'Java';
+				vm.videoTitle = 'Learn some new coding techniques!';
+				vm.meetUps = [
+					{
+						image: 'https://warroom.securestate.com/wp-content/uploads/2016/10/coding.jpg'
+						, title: 'Discuss Git Workflow Strategies'
+						, content: "Many organizations have a set git workflow. Unfortunately, often any pain felt by those pre-determined processes are dealt with instead of being fixed at the source. Often times this is because developers aren't aware of any alternatives.</p> <p>Join us for a presentation/discussion led by Dave Moore around various git workflows that are commonly used, in what situation is each appropriate, and land on some best practices that apply to each workflow."
+						, address: '241 S. Figueroa St., #240, Los Angeles, CA'
+					},
+					{
+						image: 'https://tctechcrunch2011.files.wordpress.com/2015/04/codecode.jpg'
+						, title: 'Code Night: TruffleRuby Special Edition'
+						, content: 'Join us to work on learning something new together. The second week involves learning a new piece of tech, or following a tutorial together to get something up and running. Dabble in something new.'
+						, address: '11030 Jefferson Blvd, Culver City, CA 90230'
+					},
+					{
+						image: 'http://kellerelementary.weebly.com/uploads/2/5/7/9/25792133/coding.jpg'
+						, title: 'Getting Started in Data Science'
+						, content: 'Wondering why Glassdoor named Data Scientist the best job in America? Come learn more about the field and the different job opportunities available to Data Scientists.</p> <p>We’ll cover the emergence of big data and what it means to be a data scientist. We’ll walk you through how to get the skills to become a data scientist, and focus on the different jobs that will be open to you once you’ve mastered the skill set.'
+						, address: '800 Wilshire Blvd, Los Angeles, CA'
+					},
+				];
+				vm.meetUpsII = [
+					{
+						image: 'https://courses.telegraph.co.uk/images/26/default/coding625x351.jpg'
+						, title: 'LA Tech Happy Hour'
+						, content: "A packed agenda full of invaluable perspectivesAn unparalleled keynote lineupPanel discussions addressing today's hottest topicsFirst-class Solutions ShowcaseOutstanding activities and entertainmentOpportunity to network with the who’s who of the industryWorld-class venue and destination</p> <p>Don't miss your opportunity to attend THE real time communications conference of 2017."
+						, address: '900 West Olympic Boulevard, Los Angeles, CA'
+					},
+					{
+						image: 'http://codecondo.com/wp-content/uploads/2014/04/5-Coding-Challenges-to-Help-You-Train-Your-Brain.jpg'
+						, title: 'Build your own Restaurant & Food iPhone App in 3 hours'
+						, content: "This Meetup is an opportunity for you to learn how to build a Restaurant &amp; Food type iPhone app in 3 hours. You will build your app yourself and will leave with a fully functional mobile app that can be installed on your iPhone."
+						, address: '7083 Hollywood Boulevard, Los Angeles, CA'
+					},
+					{
+						image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2014/02/08/20/p18codeREX.jpg'
+						, title: "SG Hollywood's Launch & Exclusive Fireside Chat with Digital Founder Sarah Penna"
+						, content: "Named one of Fast Company's 'Most Creative People,' Sarah Penna reached recent accolades when she created and developed Awestruck, a millennial-moms focused network and lifestyle brand that launched in 2015 on Awesomeness TV. She was responsible for identifying and signing talent to Awestruck while collaborating on programming for various platforms (YouTube, FB and Go90). During her time there, the MCN reached over 60 million views/month with a combination of celebrity and digital native talent."
+						, address: '7080 Hollywood Blvd, Suite 1100, Los Angeles, CA'
+					}
+				];
+				vm.videoURL = $sce.trustAsResourceUrl("https://www.youtube.com/embed/videoseries?list=PLevHJO9mgauaTZC1gJrlBDTaZD5Qqh_TC");
+
+				vm.$scope = $scope;
+
+				render();
+
+				function render() {
+					console.log("channel page startup");
+				}
+			};
+
+		})();
+
+	</script>
+}
+
+
+

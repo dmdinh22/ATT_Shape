@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>A Team</title>
+
+	<!-- Google fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+	<!-- font awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
+
+	<!-- animate.css -->
+	<link rel="stylesheet" href="/assets/animate/animate.css" />
+	<link rel="stylesheet" href="/assets/animate/set.css" />
+
+	<!-- gallery -->
+	<link rel="stylesheet" href="/assets/gallery/blueimp-gallery.min.css">
+
+	<!-- favicon -->
+    <link rel="shortcut icon" href="/images/moxie-favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/images/moxie-favicon-16x16.png" type="image/png" sizes="16x16">
+
+	<link rel="stylesheet" href="/assets/style.css">
+
+    <!-- chat box-->
+    <link href="~/Content/twilio-chat.css" rel="stylesheet" />
+
+
+	@Scripts.Render("~/bundles/modernizr")
+	@RenderSection("styles", required: false)
+
+    <style>
+        #top-nav {
+            height: 85px;
+        }
+    </style>
+</head>
+
+<body ng-app="attApp" ng-cloak>
+    <div class="topbar animated fadeInLeftBig"></div>
+
+    <!-- Header Starts -->
+    <div class="navbar-wrapper">
+        <div class="container">
+
+            <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Logo Starts -->
+                        <a class="navbar-brand" href="#home">
+                            @*<h2 class="effect-oscar  wowload fadeInUp">A Team</h2>*@
+                            <img src="/images/moxie-logo.png" alt="logo" style="width:170px; position: relative; top:-20px">
+                        </a>
+
+                        <!-- #Logo Ends -->
+
+
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+
+
+                    <!-- Nav Starts -->
+                    <div class="navbar-collapse  collapse">
+                        <ul class="nav navbar-nav navbar-right scroll">
+                            <li class="active"><a href="#works">Home</a></li>
+                            <li><a href="#about">Playlists</a></li>
+                            <li><a href="#partners">News</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- #Nav Ends -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- #Header Starts -->
+
+    @RenderBody()
+
+    <!-->Channel Body</!-->
+    <div class="container" ng-controller="channelController as channel" style="margin-top: 100px">
+        <h1 class="type-it">{{channel.title}}</h1>
+		    <div class="row col-sm-12">
+                <div class="col-sm-5">
+                    <h4 class="text-left">Videos of the Week</h4>
+                    <hr />
+                    <div>
+                        <iframe width="435" height="275" ng-src="{{channel.videoURL}}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-carousel">
+
+                </div>
+                @*<svg id="subsribe" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" height="36" viewBox="0 0 24 24" width="36" style="background-color:black;">
+                        <path d="M20 8H4V6h16v2zm-2-6H6v2h12V2zm4 10v8c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-8c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2zm-6 4l-6-3.27v6.53L16 16z" />
+                        <path d="M0 0h24v24H0z" fill="none" />
+                    </svg>*@
+                </div>
+                <div class="col-sm-4">
+                    <h4 class="text-left">Chat</h4>
+                    <hr />
+                    <!--CHAT BOX-->
+                    <div class="chatContainer">
+                        <div class="row col-md-12 text-center">
+                            <div id="container-chat" class="row">
+                                <div id="chat-app" class="row col-md-8">
+                                    <div id="status-row" class="row disconnected">
+                                        <div class="row">
+                                            <div id="logo-column" class="col-md-2 col-md-offset-5">
+                                                <img id="logo-image" src="~/Content/TwilioImages/twilio-logo.png" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span id="status-span">Connected as <b><span id="username-span"></span></b></span>
+                                            <span id="leave-span"><b>&#10005;</b></span>
+                                        </div>
+                                    </div>
+                                    <div id="chat-window" class="col-md-4">
+                                        <div id="message-list" class="row disconnected"></div>
+                                        <div id="typing-row" class="row disconnected">
+                                        </div>
+                                        <div id="input-div" class="row">
+                                            <textarea id="input-text" disabled="true" placeholder="Your message"></textarea>
+                                        </div>
+                                        <div id="connect-panel" class="disconnected row with-shadow">
+                                            <div class="row">
+                                                <div class="text text-center">
+                                                    <label for="username-input">Username: </label>
+                                                    <input id="username-input" type="text" placeholder="Username" />
+                                                    <button id="connect-channel" class="btn btn-default">Connect</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="channel-section" class="col-md-4">
+                                    <div id="channel-buttons-group" class="row">
+                                        <div class="btn-group" ng-controller="TwilioChatController as Chat">
+                                            <button id="add-channel-btn" type="button" class="btn btn-rose btn-block group"
+                                                    ng-show="Chat.addChannel">
+                                                Add Channel<div class="ripple-container"></div>
+                                            </button>
+                                            <div id="new-channel-input-row" class="row not-showing">
+                                                <textarea placeholder="Type channel name" id="new-channel-input" rows="1" maxlength="20" class="channel-element"></textarea>
+                                            </div>
+                                            @*<button id="delete-channel-btn" type="button" class="btn btn-default btn-block hidden">Delete Current Channel<div class="ripple-container"></div></button>*@
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="channel-panel">
+                                            <div id="channel-list" class="row not-showing"></div>
+                                            <div id="new-channel-input-row" class="row not-showing">
+                                                <textarea placeholder="Type channel name" id="new-channel-input" rows="1" maxlength="20" class="channel-element"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="col-sm-3">
+                <h4 class="text-left">MeetUps</h4>
+                <hr />
+                <div id="myCarousel" class="vertical-slider carousel vertical slide col-md-12" data-ride="carousel">
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="row" ng-repeat="meetUps in channel.meetUps">
+                                <div class="col-xs-6 col-sm-5 col-md-5">
+                                    <a href="http://dotstrap.com/">
+                                        <img src="{{meetUps.image}}" class="thumbnail news-icon"
+                                             alt="Image" />
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-sm-7 col-md-offset-2 col-md-5">
+                                    <h5 class="small-title" style="color:red;">{{meetUps.title}}</h5>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <p><small>{{meetUps.address}}</small></p>
+                                </div>
+                            </div>
+                            <!--/row-fluid-->
+                        </div>
+                        <!--/item-->
+                        <div class="item ">
+                            <div class="row" ng-repeat="meetUpsII in channel.meetUpsII">
+                                <div class="col-xs-6 col-sm-5 col-md-5">
+                                    <a href="http://dotstrap.com/">
+                                        <img src="{{meetUpsII.image}}" class="thumbnail news-icon"
+                                             alt="Image" />
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-sm-7 col-md-7">
+                                    <h5 class="small-title" style="color:red;">{{meetUpsII.title}}</h5>
+
+                                </div>
+                                <div class="col-sm-12">  <p><small>{{meetUpsII.address}}</small></p></div>
+                            </div>
+                            <!--/row-fluid-->
+                        </div>
+
+                        <!--/item-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <h4 class="text-left">Blogs</h4>
+            <hr />
+            <div id="carousel-testimonials" class="carousel slide testimonails  wowload fadeInRight" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active animated bounceInRight row">
+                        <div class="col-sm-4" ng-repeat="blog in channel.blogArticles">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <img class="news-icon thumbnail" src="{{blog.image}}" />
+                                </div>
+                                <div class="col-sm-7">
+                                    <h5 class="small-title">{{blog.title}}</h5>
+                                    <p><small>{{blog.content}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  animated bounceInRight row">
+                        <div class="col-sm-4" ng-repeat="blog in channel.blogArticles">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <img class="news-icon thumbnail" src="{{blog.image}}" />
+                                </div>
+                                <div class="col-sm-7">
+                                    <h5 class="small-title">{{blog.title}}</h5>
+                                    <p><small>{{blog.content}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-testimonials" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-testimonials" data-slide-to="1"></li>
+                    <li data-target="#carousel-testimonials" data-slide-to="2"></li>
+                </ol>
+                <!-- Indicators -->
+            </div>
+        </div>
+        <div class="col-sm-12" style="margin-bottom:50px;">
+            <h4 class="text-left">The Moxies</h4>
+            <hr />
+            <div class="carousel carousel-showmanymoveone slide" id="itemslider">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="col-xs-12 col-sm-6 col-md-2">
+                            <a href="#"><img src="/images/team/1.jpg" width="100" class="img-circle img-responsive center-block"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-12 col-sm-6 col-md-2">
+                            <a href="#"><img src="/images/team/2.jpg" width="100" class="img-circle img-responsive center-block"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-12 col-sm-6 col-md-2">
+                            <a href="#"><img src="/images/team/3.jpg" width="100" class="img-circle img-responsive center-block"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-12 col-sm-6 col-md-2">
+                            <a href="#"><img src="/images/team/1.jpg" width="100" class="img-circle img-responsive center-block"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-12 col-sm-6 col-md-2">
+                            <a href="#"><img src="/images/team/2.jpg" width="100" class="img-circle img-responsive center-block"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-12 col-sm-6 col-md-2">
+                            <a href="#"><img src="/images/team/3.jpg" width="100" class="img-circle img-responsive center-block"></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="slider-control">
+                    <a class="left carousel-control" href="#itemslider" data-slide="prev"><img src="https://s12.postimg.org/uj3ffq90d/arrow_left.png" alt="Left" class="img-responsive"></a>
+                    <a class="right carousel-control" href="#itemslider" data-slide="next"><img src="https://s12.postimg.org/djuh0gxst/arrow_right.png" alt="Right" class="img-responsive"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Starts -->
+    <!-- # Footer Ends -->
+    <a href="#works" class="gototop "><i class="fa fa-angle-up  fa-3x"></i></a>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("scripts", required: false)
+
+
+    <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+        <!-- The container for the modal slides -->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox -->
+        <h3 class="title">Title</h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    </div>
+
+
+
+    <!-- jquery -->
+    <script src="/assets/jquery.js"></script>
+
+    <!-- wow script -->
+    <script src="/assets/wow/wow.min.js"></script>
+
+    <!-- boostrap -->
+    <script src="/assets/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+
+    <!-- jquery mobile -->
+    <script src="/assets/mobile/touchSwipe.min.js"></script>
+    <script src="/assets/respond/respond.js"></script>
+
+    <!-- gallery -->
+    <script src="/assets/gallery/jquery.blueimp-gallery.min.js"></script>
+
+    <!-- custom script -->
+    <script src="/assets/script.js"></script>
+
+    <!-- chat box stuff-->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
+        <script src="//media.twiliocdn.com/sdk/js/chat/releases/0.11.1/twilio-chat.js"></script>
+        <script src="/Scripts/dateformatter.js"></script>
+        <script src="//media.twiliocdn.com/sdk/js/common/releases/0.1.5/twilio-common.js"></script>
+        <script type="text/javascript">
+            (function () {
+                "use strict";
+                angular.module("attApp").controller("TwilioChatController", ChatController);
+                ChatController.$inject = ['$scope'];
+                function ChatController($scope) {
+                    var vm = this;
+                    vm.authRoles = [];
+                    vm.addChannel = false;
+                }
+            })();
+        </script>
+        <script src="~/Scripts/jquery-throttle.min.js"></script>
+        <script src="~/Scripts/jquery.loadTemplate-1.4.4.min.js"></script>
+        <script src="/Scripts/twiliochat.js"></script>
+  
+    <!-- CHAT BOX HTML Templates -->
+    <script type="text/html" id="message-template">
+        <div class="row no-margin">
+            <div class="row no-margin message-info-row" style="">
+                <div class="col-md-8 left-align"><p data-content="username" class="message-username"></p></div>
+                <div class="col-md-4 right-align"><span data-content="date" class="message-date"></span></div>
+            </div>
+            <div class="row no-margin message-content-row">
+                <div style="" class="col-md-4"><p data-content="body" class="message-body"></p></div>
+            </div>
+        </div>
+    </script>
+    <script type="text/html" id="member-notification-template">
+        <p class="member-status" data-content="status"></p>
+    </script>
+
+</body>
+</html>

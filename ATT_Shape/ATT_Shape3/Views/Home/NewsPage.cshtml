@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutNewsPage.cshtml";
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+		(function () {
+			"use strict";
+
+			angular.module("attApp")
+				.controller('newsController', NewsController);
+
+			channelController.$inject = [];
+
+			function NewsController() {
+
+				var vm = this;
+				vm.title = 'Hackathon'
+				vm.picture =  "http://s3-eu-west-1.amazonaws.com/sup46/wp-content/uploads/2016/05/25120505/12859589015_12f18e38d0_b.jpg";
+				vm.newsInfo1 = "Maecenas laoreet diam dictum elementum suscinean non turpis ante. Suspendisse sed nulla at erat tincidunt maximus et sit amet diam. Nunc tempus a leo in pulvinar. Aenean est magna, porta et tortor ut, bibendum volutpat justo. Duis sem lacus, aliquet sit amet risus eget, s.";
+				vm.newsInfo2 = "Maecenas laoreet diam dictum elementum suscipit. Nullam convallis, tellus nec semper scelerisque, turpis eros fermentum nunc, quis ultricies tortor lorem vitae tellus. Vivamus pretium, lorem eu porta rhoncus, est nulla suscipit velit, non elementum purus augue in magna. Donec vitae justo tincidunt, tristique mi in, ullamcorper eros. In finibus porta elit, rutrum pretium dolor. Pellentesque tempus urna a tempor maximus. Aenean non turpis ante. Suspendisse sed nulla at erat tincidunt maximus et sit amet diam. Nunc tempus a leo in pulvinar. Aenean est magna, porta et tortor ut, bibendum volutpat justo. Duis sem lacus, aliquet sit amet risus eg.";
+			};
+
+		})();
+
+    </script>
+}
+
+
+

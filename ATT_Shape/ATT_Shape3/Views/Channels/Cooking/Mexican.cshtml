@@ -1,0 +1,81 @@
+﻿
+@{
+	Layout = "~/Views/Shared/_LayoutChannel.cshtml";
+}
+
+@section scripts
+{
+	<script type="text/javascript">
+		(function () {
+			"use strict";
+
+			angular.module("attApp")
+				.controller('channelController', channelController);
+
+			channelController.$inject = ['$scope', '$sce'];
+
+			function channelController($scope, $sce) {
+
+				var vm = this;
+				vm.title = 'Mexican Cooking';
+				vm.videoTitle = 'Today is all about healthy eating. Check out these easy recipes that you can learn to make in 20 minutes or less!';
+				vm.videoURL = $sce.trustAsResourceUrl("https://www.youtube.com/embed/videoseries?list=PLevHJO9mgauY_q2pqLa5R_QOk4EHl61m3");
+
+				vm.$scope = $scope;
+
+                vm.meetUps = [
+                    {
+                        image: 'http://static.oprah.com/images/201007/omag/201007-omag-kyle-evans-300x205.jpg'
+                        , title: 'Vegan Cooking'
+                        , content: 'For people who are interested in going to vegan cooking & raw food vegan classes, as well as plant-based nutritional lectures.'
+                        , address: '10820 Ventura Blvd Studio City, CA 91604, Los Angeles, CA'
+                    },
+                    {
+                        image: 'http://www.cortemadera.org/site/assets/files/1219/dining.600x0.jpg'
+                        , title: 'L.A. Dining Experience'
+                        , content: 'You are invited to experience all the best in L.A. with us! Bring your appetite as we are taking you around the globe without ever leaving L.A., exploring world cuisine from hot dog to caviar, from Ramen noodles to 10-course Chinese dinner banquet'
+                        , address: '450 W. 3rd St, Los Angeles CA 90041'
+                    },
+                    {
+                        image: 'http://jonvilma.com/images/still-life-6.jpg'
+                        , title: 'American Wine Society Los Angeles'
+                        , content: 'AWSLA is the Los Angeles chapter of the American Wine Society. The AWS was founded in 1967 as a non-profit, educational, consumer-oriented organization for those interested in learning more about all aspects of wine.'
+                        , address: '727 Lincoln Blvd. Venice, CA 90291'
+                    },
+				];
+
+				vm.meetUpsII = [
+					{
+						image: 'http://static.oprah.com/images/201007/omag/201007-omag-kyle-evans-300x205.jpg'
+						, title: 'Vegan Cooking'
+						, content: 'For people who are interested in going to vegan cooking & raw food vegan classes, as well as plant-based nutritional lectures.'
+						, address: '10820 Ventura Blvd Studio City, CA 91604, Los Angeles, CA'
+					},
+					{
+						image: 'http://www.cortemadera.org/site/assets/files/1219/dining.600x0.jpg'
+						, title: 'L.A. Dining Experience'
+						, content: 'You are invited to experience all the best in L.A. with us! Bring your appetite as we are taking you around the globe without ever leaving L.A., exploring world cuisine from hot dog to caviar, from Ramen noodles to 10-course Chinese dinner banquet'
+						, address: '450 W. 3rd St, Los Angeles CA 90041'
+					},
+					{
+						image: 'http://jonvilma.com/images/still-life-6.jpg'
+						, title: 'American Wine Society Los Angeles'
+						, content: 'AWSLA is the Los Angeles chapter of the American Wine Society. The AWS was founded in 1967 as a non-profit, educational, consumer-oriented organization for those interested in learning more about all aspects of wine.'
+						, address: '727 Lincoln Blvd. Venice, CA 90291'
+					},
+				];
+
+				render();
+
+				function render() {
+					console.log("channel page startup");
+				}
+			};
+
+		})();
+
+	</script>
+}
+
+
+

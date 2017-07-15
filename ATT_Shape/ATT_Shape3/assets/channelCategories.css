@@ -1,0 +1,69 @@
+﻿.channelContainer {
+	margin-top: 150px;
+}
+#title {
+	font-size: 19pt;
+	text-align: center;
+}
+
+#works {
+	margin-top: 80px;
+}
+
+.video-recom {
+	margin-bottom: 20px;
+}
+
+.type-it {
+	font-family: 'Open Sans', sans-serif;
+	color: #00a9c6;
+	font-weight: bold;
+}
+
+.small-title {
+	color: #00a9c6;
+}
+
+.medium-title {
+	color: gray;
+	font-weight: bold;
+}
+
+.main-text {
+	position: absolute;
+	top: 50px;
+	width: 96.66666666666666%;
+	color: #FFF;
+}
+
+.btn-min-block {
+	min-width: 145px;
+	line-height: 81px;
+}
+
+.btn-clear {
+	color: #FFF;
+	background-color: transparent;
+	border-color: #FFF;
+	margin-right: 15px;
+}
+
+	.btn-clear:hover {
+		color: #000;
+		background-color: #FFF;
+	}
+
+.effect-oscar {
+	width: 250px;
+	height: 200px;
+}
+
+.news-icon {
+	max-height: 100px;
+	max-width: 150px;
+}
+
+h4 {
+	color: white;
+	font-weight: bold;
+}

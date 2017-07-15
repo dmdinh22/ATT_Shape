@@ -1,0 +1,37 @@
+﻿
+@{
+	Layout = "~/Views/Shared/_LayoutChannelCategories.cshtml";
+}
+
+@section scripts
+{
+	<script type="text/javascript">
+		(function () {
+			"use strict";
+
+			angular.module("attApp")
+				.controller('channelCategoryController', channelCategoryController);
+
+			channelCategoryController.$inject = ['$scope', '$sce'];
+
+			function channelCategoryController($scope, $sce) {
+
+				var vm = this;
+				vm.category = 'Cooking';
+				vm.channels = [{ url: "https://img.grouponcdn.com/deal/nvxEzqmH8NAasmjGYGSc/rr-1500x900/v1/c700x420.jpg", title: "Mexican" }, { url: "https://img.grouponcdn.com/deal/vtaF3tgw41rKcE9Kc3KZhj/146767840-2048x1229/v1/c700x420.jpg", title: "Italian" }, { url: "http://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/17/0/NY1113H_barley-greek-salad_s4x3.jpg.rend.hgtvcom.616.462.jpeg", title: "Greek" }, { url: "http://farm4.static.flickr.com/3475/3299042549_b34175524e.jpg?v=0", title: "French" }, { url: "http://4.bp.blogspot.com/-zqED9wC_Frw/VK8PiMXfDqI/AAAAAAAAAQQ/tXM3VzxzO1U/s1600/Hamburger-Press.jpg", title: "American" }, { url: "https://pixel.nymag.com/imgs/daily/grub/2017/01/03/absolute-best-thai/absolute-best-thai-ayada-thai.w710.h473.jpg", title: "Thai" }, ]
+				vm.$scope = $scope;
+
+				render();
+
+				function render() {
+					console.log("channel page startup");
+				}
+			};
+
+		})();
+
+	</script>
+}
+
+
+

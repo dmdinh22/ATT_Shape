@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATT_Shape_Hackathon.web", "ATT_Shape_Hackathon.web\ATT_Shape_Hackathon.web.csproj", "{6BC500B2-F023-45EB-85A4-CDED2AA43A60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProvider", "DataProvider", "{29F29E78-94E0-421B-A19B-4FB371D2A5DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATT_Shape.domain", "ATT_Shape.domain\ATT_Shape.domain.csproj", "{F2049921-3268-498A-AE14-B9EB72E4AA9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATT_Shape3.web", "ATT_Shape3\ATT_Shape3.web.csproj", "{56520FF7-9279-4961-A111-917EDFBF7577}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BC500B2-F023-45EB-85A4-CDED2AA43A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BC500B2-F023-45EB-85A4-CDED2AA43A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BC500B2-F023-45EB-85A4-CDED2AA43A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BC500B2-F023-45EB-85A4-CDED2AA43A60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2049921-3268-498A-AE14-B9EB72E4AA9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2049921-3268-498A-AE14-B9EB72E4AA9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2049921-3268-498A-AE14-B9EB72E4AA9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2049921-3268-498A-AE14-B9EB72E4AA9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56520FF7-9279-4961-A111-917EDFBF7577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56520FF7-9279-4961-A111-917EDFBF7577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56520FF7-9279-4961-A111-917EDFBF7577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56520FF7-9279-4961-A111-917EDFBF7577}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://sabiocode.cloudapp.net:8080/tfs/sabiocollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ATT_Shape_Hackathon.web\\ATT_Shape_Hackathon.web.csproj
+		SccProjectName1 = ATT_Shape_Hackathon.web
+		SccLocalPath1 = ATT_Shape_Hackathon.web
+		SccProjectUniqueName2 = ATT_Shape.domain\\ATT_Shape.domain.csproj
+		SccProjectName2 = ATT_Shape.domain
+		SccLocalPath2 = ATT_Shape.domain
+		SccProjectUniqueName3 = ATT_Shape3\\ATT_Shape3.web.csproj
+		SccProjectName3 = ATT_Shape3
+		SccLocalPath3 = ATT_Shape3
+	EndGlobalSection
+EndGlobal

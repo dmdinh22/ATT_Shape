@@ -1,0 +1,289 @@
+﻿
+@{
+    ViewBag.Title = "MeetUpWidgetTest";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+<style>
+    .panel {
+        margin-top: 100px;
+    }
+
+    #panelTitle {
+        margin-top: 15px;
+    }
+
+</style>
+<div class="widget-wrapper" ng-controller="meetupController as muCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="text-center" id="panelTitle"><strong>Happening Within Your Area</strong></h4>
+                    </div>
+                    <!--In here we want to display various meet ups
+                    along with user groups(?) within x mile radius of the user-->
+                    <!--CARS Meetup Info-->
+                    <div class="panel-body" style="background: white">
+                        <div>
+                            <h5>Take a Scenic Drive to the top of Mount Baldy</h5>
+                            <a href="https://www.meetup.com/socalsmarties/events/240950069">
+                                RSVP'd: 19
+                                <br />
+                                Hosted By: Smart Car Owners
+                                <br />
+                                Location: 11030 Jefferson Blvd, Culver City, CA
+                            </a>
+                        </div>
+                        <div>
+                            <h5>PCH, Tuna Canyon, and Malibu Drive</h5>
+                            <a href="https://www.meetup.com/Westside-Car-Enthusiasts/events/239985744/">
+                                RSVP'd: 25
+                                <br />
+                                Hosted By: Westside Car Enthusiasts
+                                <br />
+                                Location: Pacific Coast Highway, Culver City, CA
+                            </a>
+                        </div>
+                        <div>
+                            <h5>July Cars and Coffee Meetup</h5>
+                            <a href="https://www.meetup.com/Chemical-Guys-Live-Music-with-Cars-and-Coffee/events/241100439/">
+                                RSVP'd: 38
+                                <br />
+                                Hosted By: Rides & Coffee at Chemical Guys
+                                <br />
+                                Location: 14108 South Western Avenue, Gardena, CA
+                            </a>
+                        </div>
+                    </div>
+                    <!--END CARS Meetup Info-->
+                    <!--CODE Meetup Info-->
+                    <div class="panel-body" style="background: white">
+                        <div>
+                            <h5>LA Software Craftsmanship</h5>
+                            <a href=""https://www.meetup.com/LA-Software-Craftsmanship/events/240826927/">
+                                RSVP'd: 55
+                                <br />
+                                Hosted By: Clean coders
+                                <br />
+                                Location: Santa Monica, CA
+                            </a>
+                        </div>
+                        <div>
+                            <h5>Civic Hack Night at LACI</h5>
+                            <a href="https://www.meetup.com/hackforla/events/240718429/">
+                                RSVP'd: 49
+                                <br />
+                                Hosted By: Hack for LA
+                                <br />
+                                Location: Pacific Coast Highway, Culver City, CA
+                            </a>
+                        </div>
+                        <div>
+                            <h5>Web Dev Study Group</h5>
+                            <a href="https://www.meetup.com/LearnTeachCode/events/241127931/">
+                                RSVP'd: 38
+                                <br />
+                                Hosted By: Learn Teach Code LA
+                                <br />
+                                Location: 333 S Grand Ave #450, Los Angeles, CA
+                            </a>
+                        </div>
+                    </div>
+                    <!--END CODE Meetup Info-->
+                    <!--FILM Meetup Info-->
+                    <div class="panel-body" style="background: white">
+                        <div>
+                            <h5>Free cold reading, improv & scene study</h5>
+                            <a href="https://www.meetup.com/The-LA-Actors-Circle/events/241318288/">
+                                RSVP'd: 15
+                                <br />
+                                Hosted By: The LA Actor's Circle
+                                <br />
+                                Location: 1218 Glendon Avenue, Los Angeles, CA
+                            </a>
+                        </div>
+                        <div>
+                            <h5>The Hollywood Filmmaking and Screenings Meetup</h5>
+                            <a href="https://www.meetup.com/Filmmaking-and-Screenings-in-Hollywood/events/240973642/">
+                                RSVP'd: 23
+                                <br />
+                                Hosted By: Filmmng and Screenings LA
+                                <br />
+                                Location: 5364 Wilshire Boulevard, Los Angeles, CA
+                            </a>
+                        </div>
+                        <div>
+                            <h5>"Acting Hollywood Style: On Camera Scenes/Improv/Commercials</h5>
+                            <a href="https://www.meetup.com/Acting-Hollywood-Style-On-Camera-Scenes-Improv-Commercials/events/241146227/">
+                                RSVP'd: 21
+                                <br />
+                                Hosted By: Acting Hollywood Style
+                                <br />
+                                Location: 5611 Clinton Street, Los Angeles, CA
+                            </a>
+                        </div>
+                    </div>
+                    <!--END FILM Meetup Info-->
+                    <!--FOOD Meetup Info-->
+                    <div class="panel-body" style="background: white">
+                        <div>
+                            <h5>In-Home Pasta Class w/Wine</h5>
+                            <a href="https://www.meetup.com/L-A-Culinary-Crew/events/241287819/">
+                                RSVP'd: 4
+                                <br />
+                                Hosted By: L.A. Culinary Crew"
+                                <br />
+                                Location: Your Home
+                            </a>
+                        </div>
+                        <div>
+                            <h5>Learn Tom Kha Gai ( Coconut Soup ) & Delicious Larb Gai ( Spicy Chicken Salad )</h5>
+                            <a href="https://www.meetup.com/Santa-Monica-Thai-Asian-Food-Cooking-Meetup/events/240868285/">
+                                RSVP'd: 16
+                                <br />
+                                Hosted By: Thai Asian Food Cooking Class & Social
+                                <br />
+                                Location: Santa Monica, CA
+                            </a>
+                        </div>
+                        <div>
+                            <h5>"Recipe Chat and Exchange</h5>
+                            <a href="https://www.meetup.com/Couples-Who-Cook/events/239965711/">
+                                RSVP'd: 18
+                                <br />
+                                Hosted By: Couples Who Cook
+                                <br />
+                                Location: Burbank, CA
+                            </a>
+                        </div>
+                    </div>
+                    <!--END FOOD Meetup Info-->
+                    <!--MUSIC Meetup Info-->
+                    <div class="panel-body" style="background: white">
+                        <div>
+                            <h5>Singer/Songwriter Acoustic Open Mic Night</h5>
+                            <a href="https://www.meetup.com/Blues-music-opportunities-gigs-and-jams/">
+                                RSVP'd: 12
+                                <br />
+                                Hosted By: BLUES MUSIC OPPORTUNITIES, GIGS, AND JAMS
+                                <br />
+                                Location: Los Angeles, CA
+                            </a>
+                        </div>
+                        <div>
+                            <h5>TLA Music Creators Meetup #18: Meet And Greet With Feedback Loop</h5>
+                            <a href="https://www.meetup.com/LAMusicCreators/events/236757512/">
+                                RSVP'd: 23
+                                <br />
+                                Hosted By: LA MUSIC CREATORS
+                                <br />
+                                Location: Los Angeles, CA
+                            </a>
+                        </div>
+                        <div>
+                            <h5>"Acting Hollywood Style: On Camera Scenes/Improv/Commercials</h5>
+                            <a href="https://www.meetup.com/The-Pluckin-Strummers-A-Los-Angeles-Ukulele-Club/">
+                                RSVP'd: 17
+                                <br />
+                                Hosted By: AThe Pluckin' Strummers - A Los Angeles Ukulele Club
+                                <br />
+                                Location: Los Angeles, CA
+                            </a>
+                        </div>
+                    </div>
+                    <!--END MUSIC Meetup Info-->
+                    <!--TRAVEL Meetup Info-->
+                    <div class="panel-body" style="background: white">
+                        <div>
+                            <h5>HIKE TO MT. EVEREST BASECAMP</h5>
+                            <a href="https://www.meetup.com/Los-Angeles-world-traveling-singles-Meetup/events/241313190/">
+                                RSVP'd: 5
+                                <br />
+                                Hosted By: (SCT) Southern California Traveling & Socials Singles Meetup
+                                <br />
+                                Location: Los Angeles, CA
+                            </a>
+                        </div>
+                        <div>
+                            <h5>Caribbean Cruise, NCL Escape,Oct. 7-14,Free Dining & Open Bar</h5>
+                            <a href="https://www.meetup.com/Any-City-International-Travel-Meetup/events/240171943/">
+                                RSVP'd: 29
+                                <br />
+                                Hosted By: Any City International Travel Meetup
+                                <br />
+                                Location: San Gabriel, CA
+                            </a>
+                        </div>
+                        <div>
+                            <h5>Morocco Sahara & Atlas Tour!!!</h5>
+                            <a href="https://www.meetup.com/Los-Angeles-Travel-Buddies-and-Fun-Events/events/233522507/">
+                                RSVP'd: 5
+                                <br />
+                                Hosted By: Los Angeles Travel Buddies & Fun Events
+                                <br />
+                                Location: Los Angeles, CA
+                            </a>
+                        </div>
+                    </div>
+                    <!--END TRAVEL Meetup Info-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/App/attApp.js"></script>
+<script src="~/Scripts/App/att.js"></script>
+<script src="~/Scripts/App/Services/meetup.js"></script>
+<script src="~/Scripts/App/att.Services.Meetup.js"></script>
+@section scripts {
+    <script type="text/javascript">
+        console.log('outside iify');
+        (function () {
+            "use strict";
+            angular
+                .module("attApp").controller("meetupController", MeetupController);
+
+            MeetupController.$inject = ['$scope', 'meetupService'];
+
+            function MeetupController($scope, meetupService) {
+                var vm = this;
+                vm.$scope = $scope;
+                vm.meetupService = meetupService;
+                vm.getCloseEvents = _getCloseEvents;
+                vm.onGetCloseEventsSuccess = _onGetCloseEventsSuccess;
+
+                vm.items = [];
+
+                //THE FOLD
+                render();
+                console.log('goes pass the callback');
+
+                function render() {
+                    console.log("rendering meetup widget...");
+                    vm.getCloseEvents();
+                }
+
+                function _getCloseEvents() {
+                    console.log("getting all close events for this topic");
+                    var cars = "https://api.meetup.com/2/open_events?and_text=False&offset=0&format=json&lon=-118.258666&limited_events=False&topic=cars&photo-host=public&page=500&radius=25.0&lat=34.049385&desc=False&status=upcoming&sig_id=231378481&sig=0f5d0dafc011bebb5ef9aa9533370713e8c74f60"
+
+                    vm.meetupService.getNearbyEvents(cars, vm.onGetCloseEventsSuccess, onError);
+                }//_getCloseEvents
+
+                function _onGetCloseEventsSuccess(data) {
+                    console.log("got all close meetups successfully");
+                    vm.items = data.items;
+                    console.log(data);
+                } //_onGetCloseEventsSuccess
+
+                function onError(xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.responseText);
+                } //onError
+            }
+
+        })();
+
+    </script>
+
+}
